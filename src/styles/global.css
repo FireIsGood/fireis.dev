@@ -13,6 +13,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(0, 1fr); /* Evil grid bug */
+  line-height: 1.5;
 }
 
 main {
@@ -56,4 +57,9 @@ img {
 
 a[href^="#"] {
   scroll-margin-top: 50vh;
+}
+code,
+kbd {
+  color: var(--pico-contrast);
+  padding: 0.375em 0.375em 0.1em;
 }

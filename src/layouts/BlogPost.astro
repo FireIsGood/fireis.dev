@@ -17,12 +17,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     </div>
     <div class="title">
       <div class="date">
-        <FormattedDate date={pubDate} />
+        <p class="published-on"><FormattedDate date={pubDate} /></p>
         {
           updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
-            </div>
+            <p>
+              <small class="last-updated-on">
+                (Last updated on <FormattedDate date={updatedDate} />)
+              </small>
+            </p>
           )
         }
       </div>
@@ -52,6 +54,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   .date {
     margin-bottom: 0.5em;
     color: var(--pico-muted);
+  }
+  .published-on {
+    margin-bottom: 0.25em;
   }
   .last-updated-on {
     font-style: italic;
