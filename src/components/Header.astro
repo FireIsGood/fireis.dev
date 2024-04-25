@@ -40,11 +40,12 @@ const { suffix } = Astro.props;
     font-size: 1.3em;
   }
   .logo a {
+    padding-block: 0.5em;
+    padding-inline: 0.5em 0;
     text-decoration: none;
   }
 
   nav a {
-    padding: 1em 0.5em;
     border-block: 4px solid transparent;
     text-decoration: none;
     color: var(--pico-contrast);
@@ -55,6 +56,7 @@ const { suffix } = Astro.props;
     display: flex;
   }
   .links a {
+    padding: 1em 0.5em;
     display: flex;
     align-items: center;
   }
@@ -71,9 +73,8 @@ const { suffix } = Astro.props;
         "links links";
       justify-content: space-between;
       margin-block: 1em;
-    }
-    .external-links {
-      display: none;
+      font-size: 130%;
+      flex-wrap: wrap;
     }
 
     .links {
@@ -85,6 +86,13 @@ const { suffix } = Astro.props;
 
     .theme-wrapper {
       margin-left: 0;
+    }
+  }
+
+  /* Padding if the gutters are not there */
+  @media (width < 800px) {
+    header {
+      padding-inline: 1rem;
     }
   }
 </style>
