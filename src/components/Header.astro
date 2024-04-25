@@ -1,0 +1,81 @@
+---
+interface Props {
+  suffix: string;
+}
+import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
+import HeaderLink from "@/components/HeaderLink.astro";
+import { SITE_TITLE } from "@/consts";
+
+const { suffix } = Astro.props;
+---
+
+<header>
+  <nav>
+    <h2 class="logo"><a href="/">{SITE_TITLE}{suffix}</a></h2>
+    <div class="links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+    <div class="theme-wrapper">
+      <ThemeSwitcher />
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    margin: 0;
+    padding: 0 1em 1em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .logo {
+    justify-self: left;
+    margin: 0;
+    font-size: 1.3em;
+  }
+  .logo a {
+    text-decoration: none;
+  }
+
+  nav a {
+    padding: 1em 0.5em;
+    border-block: 4px solid transparent;
+    text-decoration: none;
+    color: var(--pico-contrast);
+  }
+
+  .links {
+    margin-left: auto;
+    display: flex;
+  }
+  .links a {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 450px) {
+    nav {
+      display: grid;
+      grid-template-areas:
+        "title theme"
+        "links links";
+      justify-content: space-between;
+      margin-block: 1em;
+    }
+    .external-links {
+      display: none;
+    }
+
+    .links {
+      grid-area: links;
+      margin-left: unset;
+    }
+  }
+</style>

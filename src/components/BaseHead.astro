@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+}
+import { ViewTransitions } from "astro:transitions";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image } = Astro.props;
+---
+
+<head>
+  <!-- Global Metadata -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.red.min.css" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.url)} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={Astro.url} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(image, Astro.url)} />
+  <!-- Fix theme FOUC -->
+  <script is:inline>
+    // This must be inline to stop FOUC
+
+    // Get the theme from local storage, otherwise color scheme preference, otherwise light
+    function getInitialTheme() {
+      if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    }
+
+    // Set a data attribute for Pico, but don't store it
+    // (users may change their preference between visits)
+    document.documentElement.setAttribute("data-theme", getInitialTheme());
+    // Support Astro view transitions
+    document.addEventListener("astro:before-swap", (e) => {
+      e.newDocument.documentElement.setAttribute("data-theme", getInitialTheme());
+    });
+  </script>
+
+  <ViewTransitions />
+</head>

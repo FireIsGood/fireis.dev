@@ -1,0 +1,27 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="FireIsWebsite">
+  <section class="hero">
+    <h1>Hey, you!</h1>
+    <p>This is my blog</p>
+  </section>
+  <article>
+    <h2>What is this?</h2>
+    <p>The bare bones of my website. I stole it from a template!</p>
+  </article>
+</Layout>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    > h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>
