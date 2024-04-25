@@ -55,6 +55,10 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
     display: block;
   }
 
+  .post a:hover > .title {
+    color: var(--pico-primary);
+  }
+
   .hero-image {
     position: relative;
     margin-bottom: 0.5rem;
@@ -81,9 +85,6 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
     margin: 0;
     font-size: small;
     color: var(--pico-muted-color);
-  }
-  ul li a:hover :is(h2, .date) {
-    color: unset;
   }
 
   @media (max-width: 450px) {
