@@ -1,6 +1,6 @@
 # FireIsWebsite
 
-My blog.
+My blog!
 
 ## Installation
 
@@ -33,14 +33,14 @@ You can run the development server through the terminal.
 From the command line:
 
 ```bash
-# Default port 4321
+# Default port 1625
 pnpm dev
 ```
 
 When Astro is done setting up, you should see a success message.
 
 ```bash
-┃ Local    http://localhost:4321/
+┃ Local    http://localhost:1625/
 ┃ Network  use --host to expose
 ```
 
@@ -57,7 +57,7 @@ There are additional commands you can run from the terminal:
 
 ## Contributing
 
-Feel free to add Issues, but this is my personal blog so I will not accept pull requests.
+Feel free to add Issues. This is my personal blog, so I will not accept pull requests.
 
 ## License
 

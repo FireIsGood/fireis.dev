@@ -5,6 +5,9 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  server: {
+    port: 1625,
+  },
   site: "https://fireis.dev/",
   integrations: [mdx(), sitemap()],
   markdown: {
