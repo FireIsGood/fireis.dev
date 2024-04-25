@@ -4,6 +4,10 @@ My blog!
 
 ## Installation
 
+<details>
+<summary>...</summary>
+
+
 ### Prerequisites
 
 Read the [Astro quick start guide's prerequisite list](https://docs.astro.build/en/install/manual/#prerequisites).
@@ -54,6 +58,8 @@ There are additional commands you can run from the terminal:
 | `pnpm preview`         | Preview your build locally, before deploying     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
+
+</details>
 
 ## Contributing
 
