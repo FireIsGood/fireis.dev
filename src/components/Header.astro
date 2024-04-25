@@ -60,6 +60,10 @@ const { suffix } = Astro.props;
     align-items: center;
   }
 
+  .theme-wrapper {
+    margin-left: 1rem;
+  }
+
   @media (max-width: 450px) {
     nav {
       display: grid;
@@ -78,6 +82,10 @@ const { suffix } = Astro.props;
       margin-left: unset;
       justify-content: space-evenly;
       width: 100%;
+    }
+
+    .theme-wrapper {
+      margin-left: 0;
     }
   }
 </style>
