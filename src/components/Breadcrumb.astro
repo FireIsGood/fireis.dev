@@ -3,12 +3,11 @@ import { Breadcrumbs } from "astro-breadcrumbs";
 ---
 
 <Breadcrumbs linkTextFormat="capitalized">
-  <Fragment 
-      slot="index"
-  >
+  <Fragment slot="index">
     <span class="sr-only">Home page</span>
     <svg
       aria-label="Home Page"
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       viewBox="0 0 24 24"
@@ -25,6 +24,7 @@ import { Breadcrumbs } from "astro-breadcrumbs";
   </Fragment>
   <svg
     slot="separator"
+    aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="20"
     viewBox="0 0 24 24"
