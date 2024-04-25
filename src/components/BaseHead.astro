@@ -30,6 +30,10 @@ const { title, description, image } = Astro.props;
   <meta name="description" content={description} />
   <meta name="color-scheme" content="light dark" />
 
+  <!-- Font preloading -->
+  <link rel="preload" href="/fonts/STIXTwoText-variable.woff2" as="font" type="font/woff" crossorigin />
+  <link rel="preload" href="/fonts/STIXTwoText-italic-variable.woff2" as="font" type="font/woff" crossorigin />
+
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />

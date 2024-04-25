@@ -1,6 +1,22 @@
+@font-face {
+  font-family: "STIXTwoText";
+  src: url("/fonts/STIXTwoText-variable.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "STIXTwoText";
+  src: url("/fonts/STIXTwoText-italic-variable.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Variables and Pico overrides */
 :root {
   --size-main: 960px;
+  --pico-font-family: "STIXTwoText", sans-serif;
 }
 
 /* General layout stuff */
