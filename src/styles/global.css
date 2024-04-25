@@ -82,5 +82,6 @@ a[href^="#"] {
 code,
 kbd {
   color: var(--pico-contrast);
-  padding: 0.375em 0.375em 0.1em;
+  font-size: 0.8em;
+  padding: 0.375em 0.375em 0.15em;
 }
