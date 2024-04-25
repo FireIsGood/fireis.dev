@@ -41,7 +41,7 @@ article {
   transition: background-color var(--pico-transition);
 }
 
-/* Fix scrollbars moving over the body if possible*/
+/* Fix scrollbars moving over the body if possible */
 @media (min-width: 800px) {
   :root {
     scrollbar-gutter: stable both-edges;
