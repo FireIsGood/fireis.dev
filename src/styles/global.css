@@ -20,6 +20,11 @@ main {
   max-width: var(--size-main);
 }
 
+html,
+article {
+  transition: background-color var(--pico-transition);
+}
+
 /* Fix scrollbars moving over the body if possible*/
 @media (min-width: 800px) {
   :root {
