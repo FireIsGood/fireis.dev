@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
+import Image from "astro/components/Image.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -13,7 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   <Breadcrumb />
   <article>
     <div class="hero-image">
-      {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+      {heroImage && <Image width={1020} height={510} src={heroImage} alt="" loading="eagar" />}
     </div>
     <div class="title">
       <div class="date">
