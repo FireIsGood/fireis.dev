@@ -55,7 +55,7 @@
               Visit Website &#x2192;
             </a>
           </p>
-          <h2>Recent Posts</h2>
+          <h2>All blog posts</h2>
           <xsl:for-each select="/rss/channel/item">
             <article>
               <h3>
