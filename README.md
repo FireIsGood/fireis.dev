@@ -7,7 +7,6 @@ My blog!
 <details>
 <summary>...</summary>
 
-
 ### Prerequisites
 
 Read the [Astro quick start guide's prerequisite list](https://docs.astro.build/en/install/manual/#prerequisites).
