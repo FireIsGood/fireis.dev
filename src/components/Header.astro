@@ -24,7 +24,8 @@ const { suffix } = Astro.props;
 
 <style>
   header {
-    padding: 0 1em 1em;
+    padding: 0 1em;
+    margin-bottom: 1em;
   }
 
   nav {
@@ -73,7 +74,6 @@ const { suffix } = Astro.props;
         "title theme"
         "links links";
       justify-content: space-between;
-      margin-block: 1em;
       font-size: 130%;
       flex-wrap: wrap;
     }
@@ -94,6 +94,7 @@ const { suffix } = Astro.props;
   @media (width < 800px) {
     header {
       padding-inline: 1rem;
+      box-shadow: var(--shadow-outset);
     }
   }
 </style>

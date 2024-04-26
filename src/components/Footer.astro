@@ -25,7 +25,10 @@ import RSS from "@/components/RSS.astro";
 <style>
   footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
     padding: 1em 2em 2em;
     > * {
       margin: 0;
@@ -36,5 +39,12 @@ import RSS from "@/components/RSS.astro";
     display: flex;
     justify-content: center;
     gap: 1em;
+  }
+
+  @media (max-width: 800px) {
+    footer {
+      justify-content: center;
+      box-shadow: var(--shadow-outset);
+    }
   }
 </style>

@@ -16,6 +16,7 @@
 /* Variables and Pico overrides */
 :root {
   --size-main: 960px;
+  --size-wide: 1920px;
   --pico-font-family: "STIXTwoText", sans-serif;
 }
 
@@ -49,6 +50,13 @@ body {
 
 main {
   max-width: var(--size-main);
+}
+
+header,
+footer {
+  max-width: var(--size-wide);
+  width: 100%;
+  margin-inline: auto;
 }
 
 html,
