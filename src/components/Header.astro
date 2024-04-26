@@ -11,7 +11,7 @@ const { suffix } = Astro.props;
 
 <header>
   <nav>
-    <h2 class="logo"><a href="/">{SITE_TITLE}{suffix}</a></h2>
+    <div class="logo"><a href="/">{SITE_TITLE}{suffix}</a></div>
     <div class="links">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
@@ -35,6 +35,8 @@ const { suffix } = Astro.props;
   }
 
   .logo {
+    font-weight: bolder;
+    line-height: 1.15;
     justify-self: left;
     margin: 0;
     font-size: 1.3em;
