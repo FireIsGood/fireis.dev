@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
         <style>
-          @import url("rss/style.css")
+          @import url("rss/rss-style.css")
         </style>
       </head>
       <body>
@@ -48,7 +48,7 @@
           <h2><xsl:value-of select="/rss/channel/title"/></h2>
           <p><xsl:value-of select="/rss/channel/description"/></p>
           <p>
-            <a class="head_link" target="_blank">
+            <a target="_blank">
               <xsl:attribute name="href">
                 <xsl:value-of select="/rss/channel/link"/>
                 </xsl:attribute>
