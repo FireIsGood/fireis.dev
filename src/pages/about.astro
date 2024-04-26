@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
 import Image from "astro/components/Image.astro";
+
+import profileImage from "@/images/profile-bg-med.png";
 import graphicDesign from "@/images/graphic-design.png";
 ---
 
@@ -12,7 +14,7 @@ import graphicDesign from "@/images/graphic-design.png";
     <h1>About</h1>
     <section class="self-intro grid">
       <div class="image-container">
-        <img src="profile_bg_med.png" alt="" />
+        <Image src={profileImage} width={160} alt="" loading="lazy" />
       </div>
       <ul>
         <li><strong>Name:</strong> Fire (I'm working on it)</li>
@@ -43,7 +45,7 @@ import graphicDesign from "@/images/graphic-design.png";
         href="https://fireisgood.github.io/fish-quiz/"
         target="_blank"
         class="contrast">Fish Quiz</a
-      >, or the <a href="https://fireisgood.github.io/fake-sorority/" class="contrast">Fake Sorrority</a>.
+      > and the <a href="https://fireisgood.github.io/fake-sorority/" class="contrast">Fake Sorrority</a>.
     </p>
     <p>
       If I had to give a fun fact here, it would probably be that <a
