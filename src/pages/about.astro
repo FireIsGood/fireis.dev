@@ -2,13 +2,104 @@
 import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
+import Image from "astro/components/Image.astro";
+import graphicDesign from "@/images/graphic-design.png";
 ---
 
-<Layout suffix="About" title="About Me" description="About page">
+<Layout suffix="About" title="About" description="About page">
   <Breadcrumb />
   <article>
-    <h1>About Me</h1>
-    <p>It's me!</p>
+    <h1>About</h1>
+    <section class="self-intro grid">
+      <div class="image-container">
+        <img src="profile_bg_med.png" alt="" />
+      </div>
+      <ul>
+        <li><strong>Name:</strong> Fire (I'm working on it)</li>
+        <li>
+          <strong>Pronouns:</strong>
+          <a href="https://en.pronouns.page/@FireIsGood" target="_blank" class="contrast">She/Her</a>
+        </li>
+        <li><strong>Favorite color:</strong> Yellow</li>
+        <li>
+          <strong>Favorite link:</strong>
+          <a href="https://fireisgood.github.io/secret-message/" target="_blank" class="contrast">This one</a>
+        </li>
+      </ul>
+    </section>
+    <p>
+      Hi, I'm a programmer from the US. I love lying on the internet and creating funny images. This site is a place I
+      made to show my work and talk about various things.
+    </p>
+    <p>
+      My bread and butter is CSS, though I like to mess around in many languages. I've made things like the <a
+        href="https://obsidian.md/"
+        target="_blank"
+        class="contrast">Obsidian</a
+      > theme
+      <a href="https://github.com/FireIsGood/obsidian-everforest-enchanted" target="_blank" class="contrast"
+        >Everforest Enchanted</a
+      > (after the old maintainer stopped updating it) and this website. I've also made small sites like the <a
+        href="https://fireisgood.github.io/fish-quiz/"
+        target="_blank"
+        class="contrast">Fish Quiz</a
+      >, or the <a href="https://fireisgood.github.io/fake-sorority/" class="contrast">Fake Sorrority</a>
+    </p>
+    <p>
+      If I had to give a fun fact here, it would probably be that <a
+        href="https://www.desmos.com/"
+        target="_blank"
+        class="contrast">Desmos</a
+      > was technically my first programming language and that I used it to make an <a
+        href="https://www.desmos.com/calculator/3ktv5xdz5w"
+        target="_blank"
+        class="contrast">RGB gaming keyboard</a
+      >. Well, assuming you don't count PowerPoint...
+    </p>
+    <h2>Contact</h2>
+    <p>I'm usually most active on Discord, but any other way here is fine!</p>
+    <ul>
+      <li><strong>Discord:</strong> fireisgood</li>
+      <li>
+        <strong>Email:</strong>
+        <ul>
+          <li><a href="mailto:contact@fireis.dev">contact@fireis.dev</a> (Official)</li>
+          <li><a href="mailto:fireisadequate@gmail.com">fireisadequate@gmail.com</a> (Personal)</li>
+        </ul>
+      </li>
+    </ul>
+    <h2>Find me elsewhere</h2>
+    <ul>
+      <li><a href="https://github.com/FireIsGood" target="_blank">GitHub</a></li>
+      <li>
+        <a href="https://www.youtube.com/channel/UCLnJs6A0HxriRd1H_3tBj5A" target="_blank">YouTube</a> (but why?)
+      </li>
+    </ul>
+    <hr />
+    <Image width={300} src={graphicDesign} alt="" loading="lazy" />
   </article>
   <Ending />
 </Layout>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  .self-intro {
+    max-width: 700px;
+    margin-block: calc(var(--pico-block-spacing-vertical) * 2);
+    margin-inline: auto;
+    gap: 2rem 0;
+  }
+
+  .image-container {
+    box-shadow: var(--shadow-outset);
+    width: fit-content;
+    justify-self: center;
+
+    & > img {
+      height: 100%;
+    }
+  }
+</style>
