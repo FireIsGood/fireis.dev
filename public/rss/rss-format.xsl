@@ -62,7 +62,7 @@
                 <a target="_blank">
                   <xsl:attribute name="href">
                     <xsl:value-of select="link"/>
-                    </xsl:attribute>
+                  </xsl:attribute>
                   <xsl:value-of select="title"/>
                 </a>
               </h3>
@@ -74,6 +74,7 @@
               <p>
                 <xsl:value-of select="description" />
               </p>
+              <xsl:value-of select="content" />
             </article>
           </xsl:for-each>
         </main>
