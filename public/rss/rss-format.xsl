@@ -20,7 +20,7 @@
             <strong>This is a web feed,</strong> also known as an RSS feed. <strong>Subscribe</strong> by copying the URL from the address bar into your newsreader.
           </blockquote>
           <p>
-            Visit <a href="https://aboutfeeds.com">About Feeds</a> to get started with newsreaders and subscribing. It’s free.
+            Visit <a href="https://aboutfeeds.com">About Feeds</a> to get started with newsreaders and subscribing.
           </p>
         </header>
         <main class="container-fluid">
