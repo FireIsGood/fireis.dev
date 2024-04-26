@@ -18,6 +18,6 @@ export async function GET(context) {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       }),
     })),
-    // stylesheet: "/rss/rss-format.xsl",
+    stylesheet: "/rss/rss-format.xsl",
   });
 }
