@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Image from "astro/components/Image.astro";
+import Ending from "@/components/Ending.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -35,6 +36,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     </div>
     <slot />
   </article>
+  <Ending />
 </Layout>
 
 <style>

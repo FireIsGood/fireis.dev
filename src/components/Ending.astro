@@ -1,0 +1,72 @@
+---
+
+---
+
+<script>
+  const endingQuotes = [
+    "semper ignis sub ignis",
+    "ignis fatuus",
+    "in omnia paratus",
+    "de novo",
+    "errare ignis est",
+    "est ignis in rebus",
+  ];
+  const endingElem = document.getElementById("ending");
+
+  function setEnding(elem: HTMLElement | null) {
+    if (elem === null) return;
+    elem.innerText = endingQuotes[Math.floor(Math.random() * endingQuotes.length)] as string;
+  }
+
+  setEnding(endingElem);
+  endingElem?.addEventListener("click", () => {
+    setEnding(endingElem);
+    endingElem?.classList.toggle("secondary-fade");
+  });
+
+  // Set up on reload
+  document.addEventListener("astro:before-swap", (e) => {
+    const endingElem = e.newDocument.getElementById("ending");
+    setEnding(endingElem);
+    endingElem?.addEventListener("click", () => {
+      setEnding(endingElem);
+      endingElem?.classList.toggle("secondary-fade");
+    });
+  });
+</script>
+
+<p id="ending" aria-hidden="true"></p>
+
+<style>
+  #ending {
+    width: fit-content;
+    margin-inline: auto;
+    color: var(--pico-muted-color);
+    font-style: italic;
+
+    cursor: pointer;
+    user-select: none;
+    animation: ending-in-1 200ms;
+  }
+
+  #ending.secondary-fade {
+    animation: ending-in-2 200ms;
+  }
+
+  @keyframes ending-in-1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes ending-in-2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
