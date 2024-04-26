@@ -85,3 +85,7 @@ kbd {
   font-size: 0.8em;
   padding: 0.375em 0.375em 0.15em;
 }
+
+article > *:last-child {
+  margin-bottom: 0;
+}
