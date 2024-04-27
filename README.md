@@ -80,7 +80,9 @@ There are additional commands you can run from the terminal:
 
 ## Contributing
 
-Feel free to add Issues. This is my personal blog, so I will not accept pull requests.
+Feel free to add Issues if you see anything wrong.
+
+This is my personal blog, so I will not accept pull requests.
 
 ## License
 
