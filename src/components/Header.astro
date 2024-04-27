@@ -69,6 +69,10 @@ const { suffix } = Astro.props;
   }
 
   @media (max-width: 450px) {
+    header {
+      padding-top: 1em;
+    }
+
     nav {
       display: grid;
       grid-template-areas:
@@ -95,7 +99,7 @@ const { suffix } = Astro.props;
   /* Padding if the gutters are not there */
   @media (width < 800px) {
     header {
-      padding-inline: 1rem;
+      padding-inline: 1em;
       box-shadow: var(--shadow-outset);
     }
   }
