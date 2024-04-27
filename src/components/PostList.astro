@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import PostPreview from "@/components/PostPreview.astro";
+interface Props {
+  postCount?: number;
+}
+
+const { postCount } = Astro.props;
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, postCount);
+---
+
+<ul>
+  {
+    posts.map((post) => (
+      <li class="post">
+        <PostPreview {...post} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 90vw), 1fr));
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+
+  @media (max-width: 450px) {
+    ul {
+      gap: 0.5em;
+    }
+    ul li {
+      width: 100%;
+      text-align: center;
+    }
+    ul li:first-child {
+      margin-bottom: 0;
+    }
+    ul li:first-child .title {
+      font-size: 1.563em;
+    }
+  }
+</style>

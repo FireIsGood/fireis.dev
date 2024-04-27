@@ -1,0 +1,67 @@
+---
+import { type CollectionEntry } from "astro:content";
+import Image from "astro/components/Image.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+---
+
+<a href={`/blog/${post.slug}/`} class="contrast">
+  <div class="hero-image">
+    {
+      post.data.heroImage ? (
+        <Image width={720} height={360} src={post.data.heroImage} alt="" loading="eager" />
+      ) : (
+        "No image..."
+      )
+    }
+  </div>
+  <p class="date">
+    <FormattedDate date={post.data.pubDate} />
+  </p>
+  <h2 class="title">{post.data.title}</h2>
+  <p class="description">{post.data.description}</p>
+</a>
+<style>
+  * {
+    text-decoration: none;
+    transition: color 50ms ease;
+  }
+  a {
+    display: block;
+  }
+
+  a:hover > .title {
+    color: var(--pico-primary);
+  }
+
+  .hero-image {
+    position: relative;
+    margin-bottom: 0.5rem;
+    aspect-ratio: 2 / 1;
+    border-radius: var(--pico-border-radius);
+  }
+  .hero-image:not(:has(img)) {
+    display: grid;
+    place-items: center;
+    font-style: italic;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin: 0.1em 0 0.2em;
+    line-height: 1.2;
+  }
+  .description {
+    margin: 0;
+    font-style: italic;
+    color: var(--pico-muted-color);
+  }
+  .date {
+    margin: 0;
+    font-size: small;
+    color: var(--pico-muted-color);
+  }
+</style>

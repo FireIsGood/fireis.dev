@@ -1,107 +1,12 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import FormattedDate from "@/components/FormattedDate.astro";
-import Image from "astro/components/Image.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+import PostList from "@/components/PostList.astro";
 ---
 
 <Layout suffix="Blog" title="FireIsBlog">
   <Breadcrumb />
   <h1>All blog posts</h1>
   <hr />
-  <ul>
-    {
-      posts.map((post) => (
-        <li class="post">
-          <a href={`/blog/${post.slug}/`} class="contrast">
-            <div class="hero-image">
-              {post.data.heroImage ? (
-                <Image width={720} height={360} src={post.data.heroImage} alt="" loading="eager" />
-              ) : (
-                "No image..."
-              )}
-            </div>
-            <p class="date">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-            <h2 class="title">{post.data.title}</h2>
-            <p class="description">{post.data.description}</p>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <PostList />
 </Layout>
-
-<style>
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(250px, 90vw), 1fr));
-    justify-content: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    list-style-type: none;
-  }
-
-  .post * {
-    text-decoration: none;
-    transition: color 50ms ease;
-  }
-  .post > a {
-    display: block;
-  }
-
-  .post a:hover > .title {
-    color: var(--pico-primary);
-  }
-
-  .hero-image {
-    position: relative;
-    margin-bottom: 0.5rem;
-    aspect-ratio: 2 / 1;
-    border-radius: var(--pico-border-radius);
-  }
-  .hero-image:not(:has(img)) {
-    display: grid;
-    place-items: center;
-    font-style: italic;
-  }
-
-  .title {
-    font-size: 1.2rem;
-    margin: 0.1em 0 0.2em;
-    line-height: 1.2;
-  }
-  .description {
-    margin: 0;
-    font-style: italic;
-    color: var(--pico-muted-color);
-  }
-  .date {
-    margin: 0;
-    font-size: small;
-    color: var(--pico-muted-color);
-  }
-
-  @media (max-width: 450px) {
-    ul {
-      gap: 0.5em;
-    }
-    ul li {
-      width: 100%;
-      text-align: center;
-    }
-    ul li:first-child {
-      margin-bottom: 0;
-    }
-    ul li:first-child .title {
-      font-size: 1.563em;
-    }
-  }
-</style>
