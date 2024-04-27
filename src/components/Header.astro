@@ -10,7 +10,7 @@ const { suffix } = Astro.props;
 
 <header>
   <nav>
-    <div class="logo"><a href="/">FireIs{suffix}</a></div>
+    <div class="logo"><a href="/">FireIs&#8203;{suffix}</a></div>
     <div class="links">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
@@ -56,6 +56,7 @@ const { suffix } = Astro.props;
   .links {
     margin-left: auto;
     display: flex;
+    flex-wrap: wrap;
   }
   .links a {
     padding: 1em 0.5em;
@@ -73,6 +74,7 @@ const { suffix } = Astro.props;
       grid-template-areas:
         "title theme"
         "links links";
+      grid-template-columns: minmax(0, 1fr);
       justify-content: space-between;
       font-size: 130%;
       flex-wrap: wrap;
