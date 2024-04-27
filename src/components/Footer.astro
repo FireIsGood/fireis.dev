@@ -1,50 +1,144 @@
 ---
-import RSS from "@/components/RSS.astro";
+
 ---
 
 <footer>
-  <p>
-    <small
-      >Made with 🔥 by <a href="https://github.com/FireIsGood" target="_blank" class="contrast">FireIsGood</a></small
-    >
-  </p>
+  <div>
+    <p>
+      Made with 🔥 by <a href="https://github.com/FireIsGood" target="_blank" class="hide-decoration">FireIsGood</a>
+    </p>
+  </div>
+  <div class="footer-navigation">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
   <div class="social-links">
-    <RSS />
-    <a href="https://github.com/FireIsGood/fireis.dev" target="_blank" class="contrast" data-tooltip="GitHub">
-      <span class="sr-only">Visit FireIsGood's GitHub</span>
-      <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-        ><path
-          fill="currentColor"
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-        ></path></svg
-      >
-    </a>
+    <ul>
+      <li>
+        <a href="/rss.xml" target="_blank" class="hide-decoration"
+          ><span class="sr-only">RSS feed</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-rss"
+            ><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"
+            ></circle></svg
+          > RSS
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/FireIsGood/fireis.dev" target="_blank" class="hide-decoration">
+          <span class="sr-only">Visit FireIsGood's GitHub</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true" width="16"
+            ><path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            ></path></svg
+          > GitHub
+        </a>
+      </li>
+    </ul>
   </div>
 </footer>
 
 <style>
   footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+    gap: 1.25em 1em;
     margin-top: 2em;
     padding: 1em 2em 2em;
-    > * {
-      margin: 0;
+
+    color: var(--pico-secondary);
+    text-decoration-color: var(--pico-secondary);
+    text-wrap: balance;
+    font-size: smaller;
+
+    * {
+      color: inherit;
+      text-decoration-color: inherit;
     }
   }
 
-  .social-links {
+  footer > div {
+    width: fit-content;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  nav {
+    display: block;
+  }
+
+  :root ul {
+    padding-inline-start: 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
-    gap: 1em;
+    flex-wrap: wrap;
+    column-gap: 2ch;
+  }
+
+  ul li {
+    padding: 0;
+    list-style: none;
+  }
+  ul li a {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hide-decoration {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .footer-navigation {
+    margin-inline: auto;
+  }
+
+  .social-links {
+    margin-left: auto;
+  }
+
+  @media (max-width: 450px) {
+    footer {
+      font-size: 130%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    footer {
+      text-align: center;
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    footer > div {
+      margin: 0;
+    }
+
+    p {
+      text-align: center;
+    }
   }
 
   @media (max-width: 800px) {
     footer {
-      justify-content: center;
       box-shadow: var(--shadow-outset);
     }
   }
