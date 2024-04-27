@@ -1,6 +1,24 @@
 # FireIsWebsite
 
-My blog!
+My website! Currently hosted through GitHub Pages via an Action.
+
+Project structure:
+
+```text
+public/
+├── favicon/
+├── fonts/
+└── rss/
+src/
+├── components/
+├── content/
+│   └── blog/
+├── images/
+├── layouts/
+├── pages/
+│   └── blog/
+└── styles/
+```
 
 ## Installation
 
