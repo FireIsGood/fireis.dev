@@ -21,7 +21,7 @@ const { suffix = "Website", title, description = SITE_DESCRIPTION, image = SITE_
   <BaseHead title={title} description={description} image={image} />
   <body>
     <Header suffix={suffix} />
-    <main class="container-fluid">
+    <main id="main" class="container-fluid">
       <slot>
         <p>There should be content here!</p>
       </slot>

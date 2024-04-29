@@ -4,11 +4,13 @@ interface Props {
 }
 import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
 import HeaderLink from "@/components/HeaderLink.astro";
+import SkipToContent from "@/components/SkipToContent.astro";
 
 const { suffix } = Astro.props;
 ---
 
 <header>
+  <SkipToContent />
   <nav>
     <div class="logo"><a href="/">FireIs&#8203;{suffix}</a></div>
     <div class="links">
