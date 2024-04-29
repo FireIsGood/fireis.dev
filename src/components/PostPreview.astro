@@ -11,8 +11,8 @@ const post = Astro.props;
 <a href={`/blog/${post.slug}/`} class="contrast">
   <div class="hero-image">
     {
-      post.data.heroImage ? (
-        <Image width={720} height={360} src={post.data.heroImage} alt="" loading="eager" />
+      post.data.cover ? (
+        <Image width={720} height={360} src={post.data.cover} alt="" loading="eager" />
       ) : (
         "No image..."
       )

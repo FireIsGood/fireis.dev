@@ -8,14 +8,14 @@ import Ending from "@/components/Ending.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, cover } = Astro.props;
 ---
 
 <Layout suffix="Blog" {title} {description}>
   <Breadcrumb />
   <article>
-    <div class="hero-image">
-      {heroImage && <Image width={1020} height={510} src={heroImage} alt="" loading="eager" />}
+    <div class="cover">
+      {cover && <Image width={1020} height={510} src={cover} alt="" loading="eager" />}
     </div>
     <div class="title">
       <div class="date">
@@ -40,10 +40,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 </Layout>
 
 <style>
-  .hero-image {
+  .cover img {
     max-height: 40vh;
-    overflow: clip;
-    border-radius: var(--pico-border-radius);
   }
   .title {
     margin-bottom: 1em;

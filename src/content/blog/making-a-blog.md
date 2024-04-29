@@ -2,7 +2,7 @@
 title: "Making a Blog"
 description: "But why?"
 pubDate: "2024 04 24"
-heroImage: "/blog-placeholder-1.jpg"
+cover: "@/images/making-a-blog-thumb.jpg"
 updatedDate: "2024 04 24"
 ---
 
