@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import PostList from "@/components/PostList.astro";
 import Ending from "@/components/Ending.astro";
@@ -27,7 +28,6 @@ import Ending from "@/components/Ending.astro";
   <section>
     <h2>Recent blog posts</h2>
     <PostList postCount={3} />
-    <p class="link-to-posts"><a href="/blog">See all posts &rarr;</a></p>
   </section>
   <section>
     <Ending />
@@ -48,11 +48,6 @@ import Ending from "@/components/Ending.astro";
     > h1 {
       font-size: 2.5rem;
     }
-  }
-
-  .link-to-posts {
-    margin-top: 1em;
-    text-align: right;
   }
 
   @media (max-width: 450px) {

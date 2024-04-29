@@ -6,9 +6,8 @@ interface Props {
 }
 
 const { postCount } = Astro.props;
-const posts = (await getCollection("blog"))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, postCount);
+const allPosts = await getCollection("blog");
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, postCount);
 ---
 
 <ul>
@@ -20,6 +19,13 @@ const posts = (await getCollection("blog"))
     ))
   }
 </ul>
+{
+  postCount !== undefined && (
+    <p class="link-to-posts">
+      <a href="/blog">See all {allPosts.length} posts &rarr;</a>
+    </p>
+  )
+}
 
 <style>
   ul {
@@ -32,6 +38,11 @@ const posts = (await getCollection("blog"))
   }
   li {
     list-style-type: none;
+  }
+
+  .link-to-posts {
+    margin-top: 1em;
+    text-align: right;
   }
 
   @media (max-width: 450px) {
