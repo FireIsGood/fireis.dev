@@ -120,6 +120,10 @@ kbd {
   padding: 0.375em 0.375em 0.15em;
 }
 
+hr {
+  transition: border-top-color var(--pico-transition);
+}
+
 article > *:last-child {
   margin-bottom: 0;
 }
