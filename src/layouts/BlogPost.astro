@@ -5,13 +5,14 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Image from "astro/components/Image.astro";
 import Ending from "@/components/Ending.astro";
+import { SITE_EMBED_IMAGE } from "@/consts";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, cover } = Astro.props;
 ---
 
-<Layout suffix="Blog" {title} {description}>
+<Layout suffix="Blog" {title} {description} image={cover?.src ?? SITE_EMBED_IMAGE}>
   <Breadcrumb />
   <article>
     <div class="cover">
