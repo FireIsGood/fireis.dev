@@ -124,7 +124,7 @@ hr {
   transition: border-top-color var(--pico-transition);
 }
 
-article > *:last-child {
+:where(article, blockquote) > *:last-child {
   margin-bottom: 0;
 }
 
