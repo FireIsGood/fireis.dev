@@ -5,6 +5,8 @@ pubDate: "2024 04 28"
 cover: "@/images/longest-joke-thumb.png"
 ---
 
+> **If you just want to read the text, [skip to the joke](#the-joke).**
+
 The seemingly longest joke in the world&mdash;at least as far as googling that specific phrase is concerned&mdash; seems
 to be an old site by the name of [The Longest Joke in the World](https://longestjokeintheworld.com). It's a pretty
 classic website which seems to have been written in 2007 by the timestamp on the website itself. There is also a
@@ -15,8 +17,6 @@ From some basic research (asking my friend to google it for me), I found that th
 recounting its history. I found these two sources' formatting a little inadequate, so I thought it might be funny to
 have a _third_ repost of the same joke but with the authorship information and a bit of (other people's) research
 included.
-
-If you just want to see the joke, feel free to skip over the history section directly to [the joke](#the-joke).
 
 ## History
 
