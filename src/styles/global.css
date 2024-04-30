@@ -124,6 +124,11 @@ hr {
   transition: border-top-color var(--pico-transition);
 }
 
+ul,
+ol {
+  padding-inline-start: 1.6em;
+}
+
 :where(article, blockquote) > *:last-child {
   margin-bottom: 0;
 }
