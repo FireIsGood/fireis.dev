@@ -78,6 +78,16 @@
             </article>
           </xsl:for-each>
         </main>
+        <footer class="container-fluid">
+          <hr />
+          <h2>Want to make your feed look fancy?</h2>
+          <p>Check out these blog posts:</p>
+          <ul>
+            <li><a href="https://darekkay.com/blog/rss-styling/" target="_blank">Darek Kay - Style your RSS feed</a></li>
+            <li><a href="https://sachachua.com/blog/2024/01/xml-stylesheet-for-my-feed/" target="_blank">Sacha Chua - Ading an XSL stylesheet for my RSS and Atom feeds</a></li>
+          </ul>
+          <p><small>This section was inspired by <a href="https://gabe.rocks/rss">Gaberiel's RSS feed</a>.</small></p>
+          </footer>
       </body>
     </html>
   </xsl:template>
