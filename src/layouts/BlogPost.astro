@@ -6,6 +6,7 @@ import Breadcrumb from "@/components/Breadcrumb.astro";
 import Image from "astro/components/Image.astro";
 import Ending from "@/components/Ending.astro";
 import { SITE_EMBED_IMAGE } from "@/consts";
+import profileImage from "@/images/profile-bg-med.png";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -35,6 +36,11 @@ const { title, description, pubDate, updatedDate, cover } = Astro.props;
       </div>
       <h1>{title}</h1>
       <p><em>{description}</em></p>
+      <address>
+        By <a href="https://fireis.dev/about"
+          ><span class="profile-image"><Image src={profileImage} height={24} alt="" loading="lazy" /></span> FireIsGood</a
+        >
+      </address>
     </header>
     <slot />
   </article>
@@ -77,5 +83,23 @@ const { title, description, pubDate, updatedDate, cover } = Astro.props;
   }
   .last-updated-on {
     font-style: italic;
+  }
+
+  address > a {
+    display: inline-flex;
+    gap: 0.5ch;
+  }
+  .profile-image {
+    border-radius: var(--pico-border-radius);
+    box-shadow: var(--shadow-outset);
+    height: 1em;
+    width: 1em;
+    margin-left: 0.25ch;
+    display: inline-block;
+
+    & > img {
+      display: inline;
+      height: 100%;
+    }
   }
 </style>
