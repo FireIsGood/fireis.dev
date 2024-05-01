@@ -15,16 +15,18 @@ const { title, description, pubDate, updatedDate, cover } = Astro.props;
 <Layout suffix="Blog" {title} {description} image={cover?.src ?? SITE_EMBED_IMAGE}>
   <Breadcrumb />
   <article>
-    <div class="cover">
-      {cover && <Image width={1020} height={510} src={cover} alt="" loading="eager" />}
-    </div>
-    <div class="title">
-      <div class="date">
-        <p class="published-on"><FormattedDate date={pubDate} /></p>
+    <header>
+      <div class="cover">
+        {cover && <Image width={1020} height={510} src={cover} alt="" loading="eager" />}
+      </div>
+      <div class="metadata">
+        <p class="published-on">
+          <FormattedDate date={pubDate} />
+        </p>
         {
           updatedDate && (
-            <p>
-              <small class="last-updated-on">
+            <p class="last-updated-on">
+              <small>
                 (Last updated on <FormattedDate date={updatedDate} />)
               </small>
             </p>
@@ -33,30 +35,43 @@ const { title, description, pubDate, updatedDate, cover } = Astro.props;
       </div>
       <h1>{title}</h1>
       <p><em>{description}</em></p>
-      <hr />
-    </div>
+    </header>
     <slot />
   </article>
   <Ending />
 </Layout>
 
 <style>
+  .cover {
+    margin-bottom: var(--pico-spacing);
+  }
   .cover img {
     max-height: 40vh;
   }
-  .title {
-    margin-bottom: 1em;
-    padding: 1em 0;
+
+  header {
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+
     text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
     line-height: 1;
   }
-  .title h1 {
+
+  h1 {
     margin: 0 0 0.5em 0;
   }
-  .date {
+
+  .metadata {
     margin-bottom: 0.5em;
-    color: var(--pico-muted);
+    > * {
+      color: var(--pico-muted-color);
+    }
   }
+
   .published-on {
     margin-bottom: 0.25em;
   }

@@ -52,8 +52,8 @@ main {
   max-width: var(--size-main);
 }
 
-header,
-footer {
+body > header,
+body > footer {
   max-width: var(--size-wide);
   width: 100%;
   margin-inline: auto;
