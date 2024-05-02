@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { AUTHOR_NAME, AUTHOR_DESCRIPTION, AUTHOR_URL } from "@/consts";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, cover } = Astro.props as Props;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  dateModified: updatedDate?.toISOString() ?? undefined,
+  url: pageUrl,
+  author: {
+    "@type": "Person",
+    name: AUTHOR_NAME,
+    description: AUTHOR_DESCRIPTION,
+    url: AUTHOR_URL,
+  },
+};
+
+// Add image if it exists
+if (cover !== undefined) {
+  Object.assign(structuredData, {
+    image: {
+      "@type": "ImageObject",
+      url: cover.src,
+      width: cover.width,
+      height: cover.height,
+    },
+    thumbnailUrl: cover.src,
+  });
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

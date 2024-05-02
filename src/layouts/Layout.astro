@@ -19,6 +19,7 @@ const { suffix = "Website", title, description = SITE_DESCRIPTION, image = SITE_
 <!doctype html>
 <html lang="en">
   <BaseHead title={title} description={description} image={image} />
+  <slot name="structured-data" />
   <body>
     <Header suffix={suffix} />
     <main id="main" class="container-fluid">
