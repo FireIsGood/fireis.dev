@@ -1,0 +1,108 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Image from "astro/components/Image.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import Ending from "@/components/Ending.astro";
+
+import chmodImage from "@/images/chmod.png";
+---
+
+<Layout title="FireIsWebsite">
+  <Breadcrumb />
+  <h1>All tools</h1>
+  <p>Currenly just one, lmao.</p>
+  <hr />
+  <ul>
+    <li>
+      <a href="/tools/chmod" class="contrast">
+        <div class="hero-image">
+          <Image width={720} height={360} src={chmodImage} alt="" loading="eager" />
+        </div>
+        <p class="date">
+          <FormattedDate date={new Date("2024 05 07")} />
+        </p>
+        <h2 class="title">Chmod Calculator</h2>
+        <p class="description">A tool to calculate chmod permissions</p>
+      </a>
+    </li>
+  </ul>
+  <Ending />
+</Layout>
+
+<style>
+  /* Thse are just copied over for now, I'll have DRY this up later... */
+  * {
+    text-decoration: none;
+    transition: color 50ms ease;
+  }
+  a {
+    display: block;
+  }
+
+  a:hover > .title {
+    color: var(--pico-primary);
+  }
+
+  .hero-image {
+    position: relative;
+    margin-bottom: 0.5rem;
+    aspect-ratio: 2 / 1;
+    border-radius: var(--pico-border-radius);
+  }
+  .hero-image:not(:has(img)) {
+    display: grid;
+    place-items: center;
+    font-style: italic;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin: 0.1em 0 0.2em;
+    line-height: 1.2;
+  }
+  .description {
+    margin: 0;
+    font-style: italic;
+    color: var(--pico-muted-color);
+  }
+  .date {
+    margin: 0;
+    font-size: small;
+    color: var(--pico-muted-color);
+  }
+
+  /* List styles from Post list */
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 90vw), 1fr));
+    justify-content: start;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+
+  .link-to-posts {
+    margin-top: 1em;
+    text-align: right;
+  }
+
+  @media (max-width: 450px) {
+    ul {
+      gap: 0.5em;
+    }
+    ul li {
+      width: 100%;
+      text-align: center;
+    }
+    ul li:first-child {
+      margin-bottom: 0;
+    }
+    ul li:first-child .title {
+      font-size: 1.563em;
+    }
+  }
+</style>

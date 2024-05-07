@@ -1,0 +1,66 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Ending from "@/components/Ending.astro";
+import ChmodCalculator from "@/components/ChmodCalculator.svelte";
+---
+
+<Layout title="FireIsWebsite">
+  <Breadcrumb />
+  <section class="titlecard">
+    <h1>Chmod Calculator</h1>
+    <p><em>A calculator to help change the permissions of files on Linux</em></p>
+  </section>
+  <article>
+    <ChmodCalculator client:load />
+    <hr />
+    <h2>Explanation</h2>
+    <p>
+      Linux file permissions are separated into the Owner, Group, and Other groups. These refer to the file's owner,
+      their group, and any other users. These can be represented by read/write/execute flags written in either octal
+      (base 8) or symbolically.
+    </p>
+    <p>
+      Both the octal and symbolic representations have a leading reprsentation of zero. This is where the flag of
+      whether a file is a directory or not would be. In actual use, this is either ignored or left as the zero.
+    </p>
+    <p>As an example, the permission of <strong>740</strong> would represent:</p>
+    <ul>
+      <li><strong>7</strong>: Owner can read, write, and execute</li>
+      <li><strong>4</strong>: Group can read</li>
+      <li><strong>0</strong>: Others cannot do anything</li>
+    </ul>
+    <p>If you were to write the same permissions in symbolic form, it would be <strong>rwxr-----</strong></p>
+    <p>
+      <strong>In octal form</strong>, the number is representative of the 3 bits which represent the read/write/execute
+      permissions. After the optional leading zero, the read/write/execute bits are written as a conversion from their
+      binary form. Each value is 'worth' (counted as) a different amount so every possible combination of flags can be
+      represented.
+    </p>
+    <ul>
+      <li>Read: 4</li>
+      <li>Write: 2</li>
+      <li>Execute: 1</li>
+    </ul>
+    <p>
+      <strong>In symbolic form</strong>, the dash or letter represents the bits in a slightly easier to read format.
+      After the optional leading zero (dash in this case), the read/write/execute bits are written in order with a
+      letter representing permission and a dash representing no permission.
+    </p>
+    <ul>
+      <li>Read: r</li>
+      <li>Write: w</li>
+      <li>Execute: x</li>
+    </ul>
+  </article>
+  <section>
+    <Ending />
+  </section>
+</Layout>
+
+<style>
+  .titlecard {
+    text-align: center;
+    padding-block: 1rem;
+  }
+</style>
