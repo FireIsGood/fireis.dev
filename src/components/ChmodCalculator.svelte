@@ -131,10 +131,11 @@
   // Presets
   let presetValue: PresetOctal = "custom";
   const presetList: Preset[] = [
-    { name: "Custom", octal: "custom" },
+    { name: "No access", octal: "000" },
     { name: "Everyone full access", octal: "777" },
     { name: "Everyone read write", octal: "666" },
     { name: "Only owner full access", octal: "700" },
+    { name: "Custom", octal: "custom" },
   ];
 
   $: if (presetValue !== "custom") {
@@ -142,71 +143,91 @@
   }
 </script>
 
-<h2>Group Permissions</h2>
-<section class="permission-groups">
-  {#each permissionGroups as group}
-    <div>
-      <p class="group-title">{group.title}</p>
-      <label><input type="checkbox" bind:checked={group.read} />Read</label>
-      <label><input type="checkbox" bind:checked={group.write} />Write</label>
-      <label><input type="checkbox" bind:checked={group.execute} />Execute</label>
-    </div>
-  {/each}
-</section>
-<h2>Converted Permissions</h2>
-<fieldset class="converted-perms">
-  <label
-    >Octal <small>(3 digits of 0-7)</small><input
-      type="text"
-      bind:value={inputPermissionOctal}
-      inputmode="numeric"
-      pattern={octalPattern}
-      required
-      maxlength="3"
-      placeholder="000"
-      title="Three Octal (0-7) digits"
-      aria-invalid={!octalValid}
-      spellcheck="false"
-      autocomplete="off"
-    /></label
-  >
-  <label
-    >Symbolic <small>(3 sets of <code>rwx</code> or <code>-</code> in the pattern)</small><input
-      type="text"
-      bind:value={inputPermissionBit}
-      pattern={symbolicPattern}
-      required
-      maxlength="9"
-      placeholder="---------"
-      title="Nine symbols (rwx)"
-      class="valid"
-      aria-invalid={!symbolicValid}
-      spellcheck="false"
-      autocomplete="off"
-    /></label
-  >
-</fieldset>
-<p class="permission-label">Command</p>
-<pre><code>chmod {permissionOctal} /path/to/file.txt</code></pre>
-<p class="permission-label">Human readable:</p>
-<ul>
-  {#each permissionGroups as group}
-    <li>The {group.title} {@html permissionToText(group)}</li>
-  {/each}
-</ul>
-<h3>Presets</h3>
-<fieldset>
-  {#each presetList as preset}
-    <label
-      ><input type="radio" name="preset" bind:group={presetValue} value={preset.octal} />{preset.name} ({preset.octal})</label
-    >
-  {/each}
-</fieldset>
+<div class="grid permisson-split">
+  <div class="group-left">
+    <section>
+      <h2>Group Permissions</h2>
+      <div class="permission-groups">
+        {#each permissionGroups as group}
+          <div>
+            <p class="group-title">{group.title}</p>
+            <label><input type="checkbox" bind:checked={group.read} />Read</label>
+            <label><input type="checkbox" bind:checked={group.write} />Write</label>
+            <label><input type="checkbox" bind:checked={group.execute} />Execute</label>
+          </div>
+        {/each}
+      </div>
+    </section>
+    <section class="preset-group">
+      <h3>Presets</h3>
+      <fieldset>
+        {#each presetList as { name, octal }}
+          <label
+            ><input type="radio" name="preset" bind:group={presetValue} value={octal} />{name}{octal !== "custom"
+              ? ` (${octal})`
+              : ""}</label
+          >
+        {/each}
+      </fieldset>
+    </section>
+  </div>
+  <div>
+    <h2>Converted Permissions</h2>
+    <fieldset class="converted-perms">
+      <label
+        >Octal <small>(3 digits of 0-7)</small><input
+          type="text"
+          bind:value={inputPermissionOctal}
+          inputmode="numeric"
+          pattern={octalPattern}
+          required
+          maxlength="3"
+          placeholder="000"
+          title="Three Octal (0-7) digits"
+          aria-invalid={!octalValid}
+          spellcheck="false"
+          autocomplete="off"
+        /></label
+      >
+      <label
+        >Symbolic <small>(3 sets of <code>rwx</code> or <code>-</code> in the pattern)</small><input
+          type="text"
+          bind:value={inputPermissionBit}
+          pattern={symbolicPattern}
+          required
+          maxlength="9"
+          placeholder="---------"
+          title="Nine symbols (rwx)"
+          class="valid"
+          aria-invalid={!symbolicValid}
+          spellcheck="false"
+          autocomplete="off"
+        /></label
+      >
+    </fieldset>
+    <p class="permission-label">Command</p>
+    <pre><code>chmod {permissionOctal} /path/to/file.txt</code></pre>
+    <p class="permission-label">Human readable:</p>
+    <ul>
+      {#each permissionGroups as group}
+        <li>The {group.title} {@html permissionToText(group)}</li>
+      {/each}
+    </ul>
+  </div>
+</div>
 
 <style>
+  .permisson-split {
+    column-gap: 3rem;
+  }
+  .group-left {
+    display: grid;
+    align-items: space-between;
+  }
+
   .permission-groups {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
     gap: 1rem;
     justify-items: center;
   }
@@ -214,6 +235,19 @@
   .group-title {
     font-size: 1.4rem;
     font-weight: bold;
+  }
+
+  .preset-group {
+    border: 1px solid var(--pico-form-element-border-color);
+    border-radius: var(--pico-border-radius);
+    padding: 0.5rem;
+    height: fit-content;
+    align-self: flex-end;
+
+    & fieldset,
+    & fieldset > label:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .converted-perms {
