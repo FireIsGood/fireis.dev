@@ -30,6 +30,8 @@
     const matchesPattern = /^[0-7]{3}$/.test(permission);
     if (!matchesPattern) return;
 
+    permissionOctal = inputPermissionOctal;
+
     // Parse into the actual groups
     permission.split("").forEach((val, index) => {
       if (permissionGroups.at(index) === undefined) return;
@@ -56,6 +58,8 @@
   function invertPermToBit(permission: string) {
     const matchesPattern = /^([r-][w-][x-]){3}$/.test(permission);
     if (!matchesPattern) return;
+
+    permissionBit = inputPermissionBit;
 
     // Parse into the actual groups
     permission.split;
