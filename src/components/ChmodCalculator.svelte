@@ -75,7 +75,6 @@
     permissionBit = inputPermissionBit;
 
     // Parse into the actual groups
-    permission.split;
     const chunkSize = 3;
     for (let index = 0; index < permission.length; index += chunkSize) {
       const bits = [...permission.slice(index, index + chunkSize)].map((e: string) => e !== "-");
@@ -85,6 +84,7 @@
     }
     permissionGroups = permissionGroups; // Svelte jank lol
   }
+
   function listAsEnglish(list: string[]) {
     let output = "";
     list.forEach((item, index) => {
