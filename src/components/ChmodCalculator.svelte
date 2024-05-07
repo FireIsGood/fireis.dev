@@ -156,9 +156,9 @@
     /></label
   >
 </fieldset>
-<p>Command</p>
+<p class="permission-label">Command</p>
 <pre><code>chmod {permissionOctal} /path/to/file.txt</code></pre>
-<p>Human readable:</p>
+<p class="permission-label">Human readable:</p>
 <ul>
   {#each permissionGroups as group}
     <li>The {group.title} {@html permissionToText(group)}</li>
@@ -184,6 +184,10 @@
     & input {
       font-family: var(--pico-font-family-monospace);
     }
+  }
+
+  .permission-label {
+    margin-bottom: calc(var(--pico-spacing) * 0.25);
   }
 
   /* Change valid styles */
