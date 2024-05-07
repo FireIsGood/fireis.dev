@@ -9,11 +9,11 @@ import chmodImage from "@/images/chmod.png";
 
 <Layout suffix="Tools" title="FireIsTools" description="A chmod calculator" , image={chmodImage.src}>
   <Breadcrumb />
-  <section class="titlecard">
-    <h1>Chmod Calculator</h1>
-    <p><em>A calculator to help change the permissions of files on Linux</em></p>
-  </section>
   <article>
+    <header>
+      <h1>Chmod Calculator</h1>
+      <p><em>A calculator to help change the permissions of files on Linux</em></p>
+    </header>
     <ChmodCalculator client:load />
     <hr />
     <h2>Explanation</h2>
@@ -61,8 +61,16 @@ import chmodImage from "@/images/chmod.png";
 </Layout>
 
 <style>
-  .titlecard {
+  header {
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+
     text-align: center;
-    padding-block: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1;
   }
 </style>
