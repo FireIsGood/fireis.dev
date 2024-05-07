@@ -72,12 +72,6 @@
     }
     permissionGroups = permissionGroups; // Svelte jank lol
   }
-
-  $: permToOctal(permissionGroups);
-  $: invertPermToOctal(inputPermissionOctal);
-  $: permToBit(permissionGroups);
-  $: invertPermToBit(inputPermissionBit);
-
   function listAsEnglish(list: string[]) {
     let output = "";
     list.forEach((item, index) => {
@@ -106,6 +100,20 @@
     }
     return "can " + listAsEnglish(regroup);
   }
+
+  // Patterns
+  const octalPattern = "[0-7]{3}";
+  const symbolicPattern = "([r\\-][w\\-][x\\-]){3}";
+
+  // Reactivity
+
+  $: permToOctal(permissionGroups);
+  $: invertPermToOctal(inputPermissionOctal);
+  $: permToBit(permissionGroups);
+  $: invertPermToBit(inputPermissionBit);
+
+  $: octalValid = new RegExp(octalPattern).test(inputPermissionOctal);
+  $: symbolicValid = new RegExp(symbolicPattern).test(inputPermissionBit);
 </script>
 
 <h2>Permissions</h2>
@@ -121,8 +129,32 @@
 </section>
 <h2>Linux Permissions</h2>
 <fieldset class="converted-perms">
-  <label>Octal<input bind:value={inputPermissionOctal} inputmode="numeric" maxlength="3" /></label>
-  <label>Symbolic<input bind:value={inputPermissionBit} pattern="(-rwx)" maxlength="9" /></label>
+  <label
+    >Octal<input
+      type="text"
+      bind:value={inputPermissionOctal}
+      inputmode="numeric"
+      pattern={octalPattern}
+      required
+      maxlength="3"
+      placeholder="000"
+      title="Three Octal (0-7) digits"
+      aria-invalid={!octalValid}
+    /></label
+  >
+  <label
+    >Symbolic<input
+      type="text"
+      bind:value={inputPermissionBit}
+      pattern={symbolicPattern}
+      required
+      maxlength="9"
+      placeholder="---------"
+      title="Nine symbols (rwx)"
+      class="valid"
+      aria-invalid={!symbolicValid}
+    /></label
+  >
 </fieldset>
 <p>Command</p>
 <pre><code>chmod {permissionOctal} /path/to/file.txt</code></pre>
@@ -152,5 +184,11 @@
     & input {
       font-family: var(--pico-font-family-monospace);
     }
+  }
+
+  /* Change valid styles */
+  [aria-invalid="false"]:not(select) {
+    border-color: var(--pico-form-element-border-color);
+    background-image: unset;
   }
 </style>
