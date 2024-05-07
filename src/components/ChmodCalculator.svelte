@@ -136,7 +136,8 @@
 <style>
   .permission-groups {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    gap: 1rem;
     justify-items: center;
   }
 
