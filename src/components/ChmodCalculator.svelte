@@ -130,7 +130,7 @@
 <h2>Converted Permissions</h2>
 <fieldset class="converted-perms">
   <label
-    >Octal<input
+    >Octal <small>(3 digits of 0-7)</small><input
       type="text"
       bind:value={inputPermissionOctal}
       inputmode="numeric"
@@ -140,10 +140,12 @@
       placeholder="000"
       title="Three Octal (0-7) digits"
       aria-invalid={!octalValid}
+      spellcheck="false"
+      autocomplete="off"
     /></label
   >
   <label
-    >Symbolic<input
+    >Symbolic <small>(3 sets of <code>rwx</code> or <code>-</code> in the pattern)</small><input
       type="text"
       bind:value={inputPermissionBit}
       pattern={symbolicPattern}
@@ -153,6 +155,8 @@
       title="Nine symbols (rwx)"
       class="valid"
       aria-invalid={!symbolicValid}
+      spellcheck="false"
+      autocomplete="off"
     /></label
   >
 </fieldset>
