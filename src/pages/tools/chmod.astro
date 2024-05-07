@@ -2,10 +2,12 @@
 import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
+
 import ChmodCalculator from "@/components/ChmodCalculator.svelte";
+import chmodImage from "@/images/chmod.png";
 ---
 
-<Layout title="FireIsWebsite">
+<Layout suffix="Tools" title="FireIsTools" description="A chmod calculator" , image={chmodImage.src}>
   <Breadcrumb />
   <section class="titlecard">
     <h1>Chmod Calculator</h1>
