@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-
 import sitemap from "@astrojs/sitemap";
+import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +9,7 @@ export default defineConfig({
     port: 1625,
   },
   site: "https://fireis.dev/",
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), svelte()],
   markdown: {
     shikiConfig: {
       // https://shiki.style/themes
