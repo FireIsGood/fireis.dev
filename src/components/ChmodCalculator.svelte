@@ -116,7 +116,7 @@
   $: symbolicValid = new RegExp(symbolicPattern).test(inputPermissionBit);
 </script>
 
-<h2>Permissions</h2>
+<h2>Group Permissions</h2>
 <section class="permission-groups">
   {#each permissionGroups as group}
     <div>
@@ -127,7 +127,7 @@
     </div>
   {/each}
 </section>
-<h2>Linux Permissions</h2>
+<h2>Converted Permissions</h2>
 <fieldset class="converted-perms">
   <label
     >Octal<input
