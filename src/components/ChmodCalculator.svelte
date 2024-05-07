@@ -6,6 +6,12 @@
     execute: boolean;
   };
 
+  type PresetOctal = `${number}${number}${number}` | "custom";
+  type Preset = {
+    name: string;
+    octal: PresetOctal;
+  };
+
   // True values
   let permissionGroups: Group[] = [
     { title: "Owner", read: false, write: false, execute: false },
@@ -41,6 +47,13 @@
       permissionGroups.at(index)!.execute = bits.at(2) === "1";
     });
     permissionGroups = permissionGroups; // Svelte jank lol
+
+    const permissionIsPreset = presetList.filter((preset) => preset.octal === permission).length !== 0;
+    if (permissionIsPreset) {
+      presetValue = permission as PresetOctal;
+    } else {
+      presetValue = "custom";
+    }
   }
 
   function permToBit(group: Group[]) {
@@ -114,6 +127,19 @@
 
   $: octalValid = new RegExp(octalPattern).test(inputPermissionOctal);
   $: symbolicValid = new RegExp(symbolicPattern).test(inputPermissionBit);
+
+  // Presets
+  let presetValue: PresetOctal = "custom";
+  const presetList: Preset[] = [
+    { name: "Custom", octal: "custom" },
+    { name: "Everyone full access", octal: "777" },
+    { name: "Everyone read write", octal: "666" },
+    { name: "Only owner full access", octal: "700" },
+  ];
+
+  $: if (presetValue !== "custom") {
+    inputPermissionOctal = presetValue;
+  }
 </script>
 
 <h2>Group Permissions</h2>
@@ -168,6 +194,14 @@
     <li>The {group.title} {@html permissionToText(group)}</li>
   {/each}
 </ul>
+<h3>Presets</h3>
+<fieldset>
+  {#each presetList as preset}
+    <label
+      ><input type="radio" name="preset" bind:group={presetValue} value={preset.octal} />{preset.name} ({preset.octal})</label
+    >
+  {/each}
+</fieldset>
 
 <style>
   .permission-groups {
