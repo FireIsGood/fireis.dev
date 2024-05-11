@@ -5,11 +5,11 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://fireis.dev/",
+  integrations: [mdx(), sitemap(), svelte()],
   server: {
     port: 1625,
   },
-  site: "https://fireis.dev/",
-  integrations: [mdx(), sitemap(), svelte()],
   markdown: {
     shikiConfig: {
       // https://shiki.style/themes
