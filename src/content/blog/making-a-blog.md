@@ -3,7 +3,6 @@ title: "Making a Blog"
 description: "But why?"
 pubDate: "2024 04 24"
 cover: "@/images/making-a-blog-thumb.jpg"
-updatedDate: "2024 04 24"
 ---
 
 I wanted to make a blog, so I did!
