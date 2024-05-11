@@ -19,5 +19,6 @@ export default defineConfig({
       // https://shiki.style/themes
       theme: "catppuccin-macchiato",
     },
+    syntaxHighlight: "prism",
   },
 });
