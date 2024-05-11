@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry } from "astro:content";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import FormattedDate from "@/components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">;
@@ -10,13 +10,7 @@ const post = Astro.props;
 
 <a href={`/blog/${post.slug}/`} class="contrast">
   <div class="hero-image">
-    {
-      post.data.cover ? (
-        <Image width={720} height={360} src={post.data.cover} alt="" loading="eager" />
-      ) : (
-        "No image..."
-      )
-    }
+    {post.data.cover ? <Image width={720} height={360} src={post.data.cover} alt="" loading="eager" /> : "No image..."}
   </div>
   <p class="date">
     <FormattedDate date={post.data.pubDate} />
