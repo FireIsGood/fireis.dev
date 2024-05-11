@@ -29,12 +29,18 @@ const { headings } = Astro.props;
 const toc = buildToc(headings);
 ---
 
-<div class="table-of-contents">
-  <p class="table-of-contents-header">Contents</p>
-  <ul>
-    {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
-  </ul>
-</div>
+{
+  toc.length > 0 && (
+    <div class="table-of-contents">
+      <p class="table-of-contents-header">Contents</p>
+      <ul>
+        {toc.map((heading) => (
+          <TableOfContentsHeading heading={heading} />
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 <style>
   .table-of-contents {
