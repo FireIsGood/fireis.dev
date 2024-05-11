@@ -11,6 +11,9 @@ export default defineConfig({
     port: 1625,
     open: "/", // Auto-open
   },
+  devToolbar: {
+    enabled: false,
+  },
   markdown: {
     shikiConfig: {
       // https://shiki.style/themes
