@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "lint": "prettier . -w",
+    "lint": "prettier . -c",
+    "format": "prettier . -w",
     "prepare": "husky"
   },
   "dependencies": {
