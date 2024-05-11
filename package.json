@@ -28,8 +28,13 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "hast-util-to-string": "^3.0.0",
+    "hastscript": "^9.0.0",
     "husky": "^9.0.11",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "rehype-accessible-emojis": "^0.3.2",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0"
   }
 }

@@ -5,7 +5,9 @@ pubDate: "2024 04 23"
 cover: "@/images/blog-placeholder.jpg"
 ---
 
-Some test text!
+Some test text! 🔥
+
+## Some code blocks
 
 And here are some `code` blocks:
 
@@ -51,6 +53,10 @@ type enum = "hi" | "wow" | number
   property: "string" !important;
 }
 ```
+
+### Difference block
+
+Wow
 
 ```diff
 - your mom

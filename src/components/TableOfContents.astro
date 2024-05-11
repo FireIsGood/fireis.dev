@@ -1,0 +1,65 @@
+---
+import TableOfContentsHeading from "@/components/TableOfContentsHeading.astro";
+import type { MarkdownHeading } from "astro";
+
+type ExtendedMarkdownHeading = MarkdownHeading & { subheadings: ExtendedMarkdownHeading[] };
+
+type Props = {
+  headings: MarkdownHeading[];
+};
+
+function buildToc(headings: MarkdownHeading[]): ExtendedMarkdownHeading[] {
+  const toc: ExtendedMarkdownHeading[] = [];
+  const parentHeadings = new Map();
+  headings.forEach((h) => {
+    const heading = { ...h, subheadings: [] };
+    parentHeadings.set(heading.depth, heading);
+    // Map into depth
+    if (heading.depth === 2) {
+      toc.push(heading);
+    } else {
+      parentHeadings.get(heading.depth - 1).subheadings.push(heading);
+    }
+  });
+
+  return toc;
+}
+
+const { headings } = Astro.props;
+const toc = buildToc(headings);
+---
+
+<div class="table-of-contents">
+  <p class="table-of-contents-header">Contents</p>
+  <ul>
+    {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
+  </ul>
+</div>
+
+<style>
+  .table-of-contents {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--pico-code-background-color);
+    border-radius: var(--pico-border-radius);
+    transition: background-color var(--pico-transition);
+
+    & :global(ul) {
+      padding-inline-start: 1rem;
+      margin-bottom: 0;
+    }
+    & :global(li) {
+      list-style: none;
+    }
+
+    /* First gets 0 padding*/
+    & > ul {
+      padding-inline-start: 0;
+    }
+  }
+  .table-of-contents-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+</style>

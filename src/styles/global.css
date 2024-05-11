@@ -144,3 +144,15 @@ ol {
 .inset {
   box-shadow: var(--shadow-inset);
 }
+
+/* Rehype heading link */
+a:has(.header-permalink) {
+  padding-inline: 0.5ch;
+  color: var(--pico-muted-color);
+  opacity: 0.5;
+  transition: opacity var(--pico-transition);
+
+  &:hover {
+    opacity: 1;
+  }
+}
