@@ -114,15 +114,21 @@ img {
 a[href^="#"] {
   scroll-margin-top: 50vh;
 }
+
+pre,
 code,
 kbd {
   color: var(--pico-contrast);
   font-size: 0.8em;
-  padding: 0.375em 0.375em 0.15em;
+  transition: background-color var(--pico-transition);
 }
 
 hr {
   transition: border-top-color var(--pico-transition);
+}
+
+article > header {
+  transition: border-bottom-color var(--pico-transition);
 }
 
 ul,
