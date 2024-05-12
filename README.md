@@ -1,5 +1,7 @@
 # FireIsWebsite
 
+![GitHub License](https://img.shields.io/github/license/fireisgood/fireis.dev?style=flat-square&color=a31f34) ![GitHub last commit](https://img.shields.io/github/last-commit/fireisgood/fireis.dev?style=flat-square) ![Website](https://img.shields.io/website?url=http%3A%2F%2Ffireis.dev&style=flat-square)
+
 My website! Currently hosted through GitHub Pages via an Action.
 
 Project structure:
