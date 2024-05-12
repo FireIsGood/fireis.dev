@@ -3,9 +3,11 @@ import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
 import Terminal from "@/components/JavascriptTerminal.svelte";
+
+import jsImage from "@/images/js-terminal.png";
 ---
 
-<Layout suffix="Tools" title="FireIsTools" description="A JavaScript terminal">
+<Layout suffix="Tools" title="FireIsTools" description="A JavaScript terminal" image={jsImage.src}>
   <Breadcrumb />
   <article>
     <header>
