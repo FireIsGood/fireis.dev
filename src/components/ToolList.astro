@@ -1,0 +1,149 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+interface Props {
+  toolCount?: number;
+}
+
+const { toolCount } = Astro.props;
+
+type Tool = {
+  title: string;
+  description: string;
+  cover: string;
+  date: string;
+  url: string;
+};
+
+const prefix = "/src/images/";
+
+const tools: Tool[] = [
+  {
+    title: "Chmod Calculator",
+    description: "A tool to calculate chmod permissions",
+    cover: prefix + "chmod.png",
+    date: "2024 05 07",
+    url: "/tools/chmod",
+  },
+  {
+    title: "JavaScript Terminal",
+    description: "A basic JavaScript REPL",
+    cover: prefix + "js-terminal.png",
+    date: "2024 05 11",
+    url: "/tools/javascript-terminal",
+  },
+]
+  .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+  .slice(0, toolCount);
+
+const images = import.meta.glob("@/images/*");
+---
+
+<ul>
+  {
+    tools.map((tool) => (
+      <li class="tool">
+        <a href={tool.url} class="contrast">
+          <div class="hero-image">
+            <Image
+              width={720}
+              height={360}
+              src={images[tool.cover]!() as unknown as ImageMetadata}
+              alt=""
+              loading="eager"
+            />
+          </div>
+          <p class="date">
+            <FormattedDate date={new Date(tool.date)} />
+          </p>
+          <h2 class="title">{tool.title}</h2>
+          <p class="description">{tool.description}</p>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+{
+  toolCount !== undefined && (
+    <p class="link-to-posts">
+      <a href="/tools">See all {tools.length} tools &rarr;</a>
+    </p>
+  )
+}
+
+<style>
+  /* Thse are just copied over for now, I'll have DRY this up later... */
+  /* Added a .tool temporarily for this lol */
+  .tool a {
+    text-decoration: none;
+    display: block;
+  }
+
+  a:hover > .title {
+    color: var(--pico-primary);
+  }
+
+  .hero-image {
+    position: relative;
+    margin-bottom: 0.5rem;
+    aspect-ratio: 2 / 1;
+    border-radius: var(--pico-border-radius);
+  }
+  .hero-image:not(:has(img)) {
+    display: grid;
+    place-items: center;
+    font-style: italic;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin: 0.1em 0 0.2em;
+    line-height: 1.2;
+    transition: color 50ms ease;
+  }
+  .description {
+    margin: 0;
+    font-style: italic;
+    color: var(--pico-muted-color);
+  }
+  .date {
+    margin: 0;
+    font-size: small;
+    color: var(--pico-muted-color);
+  }
+
+  /* List styles from Post list */
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 90vw), 1fr));
+    justify-content: start;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+
+  .link-to-posts {
+    margin-top: 1em;
+    text-align: right;
+  }
+
+  @media (max-width: 450px) {
+    ul {
+      gap: 0.5em;
+    }
+    ul li {
+      width: 100%;
+      text-align: center;
+    }
+    ul li:first-child {
+      margin-bottom: 0;
+    }
+    ul li:first-child .title {
+      font-size: 1.563em;
+    }
+  }
+</style>

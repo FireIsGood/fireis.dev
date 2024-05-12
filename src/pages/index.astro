@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import PostList from "@/components/PostList.astro";
+import ToolList from "@/components/ToolList.astro";
 import Ending from "@/components/Ending.astro";
 import WebsiteStructuredData from "@/components/WebsiteStructuredData.astro";
 ---
@@ -29,6 +30,10 @@ import WebsiteStructuredData from "@/components/WebsiteStructuredData.astro";
   <section>
     <h2>Recent blog posts</h2>
     <PostList postCount={3} />
+  </section>
+  <section>
+    <h2>Recent tools</h2>
+    <ToolList toolCount={3} />
   </section>
   <section>
     <Ending />
