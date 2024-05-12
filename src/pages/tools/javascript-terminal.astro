@@ -1,0 +1,53 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Ending from "@/components/Ending.astro";
+import Terminal from "@/components/JavascriptTerminal.svelte";
+---
+
+<Layout suffix="Tools" title="FireIsTools" description="A JavaScript terminal">
+  <Breadcrumb />
+  <article>
+    <header>
+      <h1>JavaScript Terminal</h1>
+      <p><em>A basic JavaScript REPL</em></p>
+    </header>
+    <Terminal client:load />
+    <hr />
+    <p>
+      This is an extremely basic and probably evil JavaScript REPL (Read, Evaluate, Print, Loop) app. It literally just
+      does a <code>eval()</code> call on your inputs. The inputs you give are not checked, so <strong
+        >certain commands can brick the page</strong
+      >. As an example, <code>document.body.style.display = "none"</code> will straight up hide the page.
+    </p>
+    <p>
+      Since this method is super hacky, you can't bind variables with the usual keywords like <code>let</code> or <code
+        >const</code
+      >, you'll have to use the <code>this</code> context.
+    </p>
+    <p>The arrow keys work similarly to the default console, so you can press up or down to see previous commands.</p>
+    <p>For conveience, I have added some helpers:</p>
+    <ul>
+      <li><code>console.log()</code> actually logs to the terminal</li>
+      <li><code>clear()</code> clears the terminal</li>
+    </ul>
+  </article>
+  <section>
+    <Ending />
+  </section>
+</Layout>
+
+<style>
+  header {
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+  }
+</style>

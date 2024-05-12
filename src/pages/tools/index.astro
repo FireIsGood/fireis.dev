@@ -5,38 +5,71 @@ import { Image } from "astro:assets";
 import FormattedDate from "@/components/FormattedDate.astro";
 import Ending from "@/components/Ending.astro";
 
-import chmodImage from "@/images/chmod.png";
+type Tool = {
+  title: string;
+  description: string;
+  cover: string;
+  date: string;
+  url: string;
+};
+
+const prefix = "/src/images/";
+
+const tools: Tool[] = [
+  {
+    title: "Chmod Calculator",
+    description: "A tool to calculate chmod permissions",
+    cover: prefix + "chmod.png",
+    date: "2024 05 07",
+    url: "/tools/chmod",
+  },
+  {
+    title: "JavaScript Terminal",
+    description: "A basic JavaScript REPL",
+    cover: prefix + "js-terminal.png",
+    date: "2024 05 11",
+    url: "/tools/javascript-terminal",
+  },
+].sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+const images = import.meta.glob("@/images/*");
 ---
 
 <Layout suffix="Tools" title="FireIsTools">
   <Breadcrumb />
   <h1>All tools</h1>
-  <p>Currenly just one, lmao.</p>
   <hr />
   <ul>
-    <li>
-      <a href="/tools/chmod" class="contrast">
-        <div class="hero-image">
-          <Image width={720} height={360} src={chmodImage} alt="" loading="eager" />
-        </div>
-        <p class="date">
-          <FormattedDate date={new Date("2024 05 07")} />
-        </p>
-        <h2 class="title">Chmod Calculator</h2>
-        <p class="description">A tool to calculate chmod permissions</p>
-      </a>
-    </li>
+    {
+      tools.map((tool) => (
+        <li>
+          <a href={tool.url} class="contrast">
+            <div class="hero-image">
+              <Image
+                width={720}
+                height={360}
+                src={images[tool.cover]!() as unknown as ImageMetadata}
+                alt=""
+                loading="eager"
+              />
+            </div>
+            <p class="date">
+              <FormattedDate date={new Date(tool.date)} />
+            </p>
+            <h2 class="title">{tool.title}</h2>
+            <p class="description">{tool.description}</p>
+          </a>
+        </li>
+      ))
+    }
   </ul>
   <Ending />
 </Layout>
 
 <style>
   /* Thse are just copied over for now, I'll have DRY this up later... */
-  * {
-    text-decoration: none;
-    transition: color 50ms ease;
-  }
   a {
+    text-decoration: none;
     display: block;
   }
 
@@ -60,6 +93,7 @@ import chmodImage from "@/images/chmod.png";
     font-size: 1.2rem;
     margin: 0.1em 0 0.2em;
     line-height: 1.2;
+    transition: color 50ms ease;
   }
   .description {
     margin: 0;
