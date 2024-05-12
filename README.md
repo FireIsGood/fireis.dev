@@ -8,7 +8,6 @@ Project structure:
 
 ```text
 public/
-├── favicon/
 ├── fonts/
 └── rss/
 src/
