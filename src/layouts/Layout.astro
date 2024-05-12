@@ -37,8 +37,10 @@ Have an souvenir:
 
 -->
 <html lang="en">
-  <BaseHead title={title} description={description} image={image} />
-  <slot name="structured-data" />
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+    <slot name="structured-data" />
+  </head>
   <body>
     <Header suffix={suffix} />
     <main id="main" class="container-fluid">
