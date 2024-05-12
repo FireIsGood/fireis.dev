@@ -102,7 +102,13 @@
 <form on:submit|preventDefault={handleSubmit}>
   <!-- svelte-ignore a11y-no-redundant-roles -->
   <fieldset role="group">
-    <input type="text" bind:value={currentCommand} on:keydown={handleInputKey} placeholder="Command..." />
+    <input
+      type="text"
+      bind:value={currentCommand}
+      on:keydown={handleInputKey}
+      autocomplete="off"
+      placeholder="Command..."
+    />
     <input type="submit" value="Evaluate" />
   </fieldset>
 </form>
