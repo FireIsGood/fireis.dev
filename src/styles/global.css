@@ -14,10 +14,11 @@
 }
 
 /* Variables and Pico overrides */
-:root {
+:root:root {
   --size-main: 960px;
   --size-wide: 1920px;
   --pico-font-family: "STIXTwoText", sans-serif;
+  --pico-code-background-color: var(--pico-form-element-selected-background-color);
 }
 
 /* Alternate shadow */
@@ -119,6 +120,7 @@ a[href^="#"] {
 pre,
 code,
 kbd {
+  display: inline;
   color: var(--pico-contrast);
   font-size: 0.8em;
   transition: background-color var(--pico-transition);
