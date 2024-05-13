@@ -1,7 +1,7 @@
 ---
 title: "Destroying All Crabs"
 description: "I hate them. Destroy them all!"
-pubDate: "Jul 22 2022"
+pubDate: "2024 04 01"
 cover: "@/images/annihilated.png"
 ---
 

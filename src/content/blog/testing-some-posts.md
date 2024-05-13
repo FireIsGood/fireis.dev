@@ -1,7 +1,7 @@
 ---
 title: "Testing Some Posts"
 description: "I wonder if this works..."
-pubDate: "2024 04 23"
+pubDate: "0001-01-02"
 cover: "@/images/blog-placeholder.jpg"
 ---
 
