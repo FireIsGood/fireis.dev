@@ -1,6 +1,8 @@
 # FireIsWebsite
 
-![GitHub License](https://img.shields.io/github/license/fireisgood/fireis.dev?style=flat-square&color=a31f34) ![GitHub last commit](https://img.shields.io/github/last-commit/fireisgood/fireis.dev?style=flat-square) ![Website](https://img.shields.io/website?url=http%3A%2F%2Ffireis.dev&style=flat-square)
+![GitHub License](https://img.shields.io/github/license/fireisgood/fireis.dev?style=flat-square&color=a31f34)
+![GitHub last commit](https://img.shields.io/github/last-commit/fireisgood/fireis.dev?style=flat-square)
+![Website](https://img.shields.io/website?url=http%3A%2F%2Ffireis.dev&style=flat-square)
 
 My website! Currently hosted through GitHub Pages via an Action.
 
@@ -38,9 +40,12 @@ pnpm -v
 
 ### Setup
 
-First, [fork the repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+First,
+[fork the repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
-Once the prerequisites are installed and you are working off the fork, [clone the repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) to your local machine.
+Once the prerequisites are installed and you are working off the fork,
+[clone the repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+to your local machine.
 
 This can be done from the command line:
 

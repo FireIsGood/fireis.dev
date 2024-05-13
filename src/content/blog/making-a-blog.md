@@ -23,10 +23,10 @@ some random global style sheet that I didn't really feel was clean enough and th
 wanted. To fix, this I ripped everything out and started with a base of [Pico CSS](https://picocss.com/)&mdash;my
 favorite CSS mini-framework.
 
-From there, I was able to relatively easily just go wild with my styles knowing I had clean
-and semantic defaults to rely on. As usual with my website styling, I threw on the basic max width and card-ish setup.
-This website has a `960px` max width, though I have used `1080px` or other random widths for other sites. I also decided
-to try out a newer trick with the body to force the footer to stick to the bottom of the screen.
+From there, I was able to relatively easily just go wild with my styles knowing I had clean and semantic defaults to
+rely on. As usual with my website styling, I threw on the basic max width and card-ish setup. This website has a `960px`
+max width, though I have used `1080px` or other random widths for other sites. I also decided to try out a newer trick
+with the body to force the footer to stick to the bottom of the screen.
 
 ## Suffering
 
