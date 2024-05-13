@@ -1,7 +1,16 @@
 {
-  "name": "FireIsWebsite",
+  "name": "fireisdev-website",
+  "description": "Website of FireIsGood",
   "type": "module",
   "version": "1.0.0",
+  "homepage": "https://github.com/FireIsGood/fireis.dev",
+  "license": "MIT",
+  "author": {
+    "name": "FireIsGood",
+    "email": "contact@fireis.dev",
+    "url": "https://fireis.dev/"
+  },
+  "repository": "github:fireisgood/fireis.dev",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
