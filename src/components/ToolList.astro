@@ -63,6 +63,12 @@ const images = import.meta.glob("@/images/*");
       </li>
     ))
   }
+  {
+    tools.length < 3 &&
+      Array(3 - tools.length)
+        .fill(0)
+        .map(() => <li />)
+  }
 </ul>
 {
   toolCount !== undefined && (
