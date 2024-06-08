@@ -20,11 +20,12 @@ import chmodImage from "@/images/chmod.png";
     <p>
       Linux file permissions are separated into the Owner, Group, and Other groups. These refer to the file's owner,
       their group, and any other users. These can be represented by read/write/execute flags written in either octal
-      (base 8) or symbolically.
+      (base 8) or symbolically (letter or -).
     </p>
     <p>
-      Both the octal and symbolic representations have a leading reprsentation of zero. This is where the flag of
-      whether a file is a directory or not would be. In actual use, this is either ignored or left as the zero.
+      Both the octal and symbolic representations have a leading representation of zero. This is where the flag of
+      whether a file is a directory or not would be. In actual use, this is either ignored or left as the zero in most
+      cases.
     </p>
     <p>As an example, the permission of <strong>740</strong> would represent:</p>
     <ul>
@@ -33,17 +34,22 @@ import chmodImage from "@/images/chmod.png";
       <li><strong>0</strong>: Others cannot do anything</li>
     </ul>
     <p>If you were to write the same permissions in symbolic form, it would be <strong>rwxr-----</strong></p>
+    <h3>Representation</h3>
+    <p>
+      Both octal and form and symbolic form are able to distingush all variations of the read write execute permissions
+      by essentially setting bit flags. Octal just adds each trio of bit flags together for convenience.
+    </p>
     <p>
       <strong>In octal form</strong>, the number is representative of the 3 bits which represent the read/write/execute
-      permissions. After the optional leading zero, the read/write/execute bits are written as a conversion from their
-      binary form. Each value is 'worth' (counted as) a different amount so every possible combination of flags can be
-      represented.
+      permissions. After the optional leading zero, the read/write/execute bits are written as bit triplets. Each value
+      is 'worth' (counted as) a different amount so every possible combination of flags can be represented.
     </p>
     <ul>
       <li>Read: 4</li>
       <li>Write: 2</li>
       <li>Execute: 1</li>
     </ul>
+    <p>Each bit triplet will then add together to give you the number you see in octal.</p>
     <p>
       <strong>In symbolic form</strong>, the dash or letter represents the bits in a slightly easier to read format.
       After the optional leading zero (dash in this case), the read/write/execute bits are written in order with a
@@ -53,6 +59,11 @@ import chmodImage from "@/images/chmod.png";
       <li>Read: r</li>
       <li>Write: w</li>
       <li>Execute: x</li>
+    </ul>
+    <p>Each group of three bits are then simply placed in order.</p>
+    <h2>Additional Resources</h2>
+    <ul>
+      <li><a href="https://cheatsheets.zip/chmod">Cheatsheet.zip &ndash; Chmod</a> more recipes and usage examples</li>
     </ul>
   </article>
   <section>
