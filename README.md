@@ -73,14 +73,15 @@ When Astro is done setting up, you should see a success message.
 
 There are additional commands you can run from the terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:1625`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| Command                | Action                                                  |
+| :--------------------- | :------------------------------------------------------ |
+| `pnpm install`         | Installs dependencies                                   |
+| `pnpm start`           | Starts local dev server at `localhost:1625`             |
+| `pnpm dev`             | Starts local dev server at `localhost:1625` and open it |
+| `pnpm build`           | Build your production site to `./dist/`                 |
+| `pnpm preview`         | Preview your build locally, before deploying            |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check`        |
+| `pnpm astro -- --help` | Get help using the Astro CLI                            |
 
 </details>
 
