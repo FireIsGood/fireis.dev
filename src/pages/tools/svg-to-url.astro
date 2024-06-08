@@ -1,0 +1,37 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Ending from "@/components/Ending.astro";
+import SvgConverter from "@/components/SvgConverter.svelte";
+
+import thumbImage from "@/images/svg-to-url.png";
+---
+
+<Layout suffix="Tools" title="FireIsTools" description="A JavaScript terminal" image={thumbImage.src}>
+  <Breadcrumb />
+  <article>
+    <header>
+      <h1>SVG to URL</h1>
+      <p><em>Converts SVGs to Data URLs</em></p>
+    </header>
+    <SvgConverter client:load />
+  </article>
+  <section>
+    <Ending />
+  </section>
+</Layout>
+
+<style>
+  header {
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+  }
+</style>
