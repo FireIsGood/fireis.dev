@@ -32,10 +32,15 @@ src/
 
 Read the [Astro quick start guide's prerequisite list](https://docs.astro.build/en/install/manual/#prerequisites).
 
-This project uses pnpm. You can check that pnpm is installed in the terminal by running:
+This project uses pnpm, though you can use npm if you wish. You can check that pnpm/npm is installed in the terminal by
+running:
 
 ```bash
+# Using pnpm
 pnpm -v
+
+# Using npm
+npm -v
 ```
 
 ### Setup
