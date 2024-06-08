@@ -31,7 +31,6 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), svelte()],
   server: {
     port: 1625,
-    open: "/", // Auto-open
   },
   devToolbar: {
     enabled: false,
