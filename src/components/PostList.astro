@@ -18,12 +18,6 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
       </li>
     ))
   }
-  {
-    posts.length < 3 &&
-      Array(3 - posts.length)
-        .fill(0)
-        .map(() => <li />)
-  }
 </ul>
 {
   postCount !== undefined && (
