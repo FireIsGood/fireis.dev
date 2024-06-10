@@ -213,7 +213,7 @@ like getting back up, since he'll just fall down again. He keeps going up the du
 While crawling, if his throat weren't so dry, he'd laugh. He's finally gotten to the hackneyed image of a man lost in
 the desert, crawling through the sand on his hands and knees. It would be the perfect image, he imagines, if only his
 clothes were more ragged. The people crawling through the desert in the cartoons always had ragged clothes, but his have
-lasted without any rips so far. Somebody will probably find his dessicated corpse half buried in the sand years from
+lasted without any rips so far. Somebody will probably find his desiccated corpse half buried in the sand years from
 now, and his clothes will still be in fine shape - shake the sand out, give them a good wash, and they'd be wearable
 again. He wishes his throat were wet enough to laugh. He coughs a little instead, and it hurts.
 
