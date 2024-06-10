@@ -18,8 +18,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "lint": "prettier . -c",
-    "format": "prettier . -w",
+    "lint": "prettier . --check --log-level=warn && markdownlint-cli2 src/**/*.{md,mdx}",
+    "format": "prettier . --write --log-level=warn && markdownlint-cli2 src/**/*.{md,mdx} -fix",
     "prepare": "husky"
   },
   "dependencies": {
@@ -40,6 +40,7 @@
     "hast-util-to-string": "^3.0.0",
     "hastscript": "^9.0.0",
     "husky": "^9.0.11",
+    "markdownlint-cli2": "^0.13.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-svelte": "^3.2.3",
