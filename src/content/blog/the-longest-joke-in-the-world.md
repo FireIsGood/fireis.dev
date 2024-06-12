@@ -19,12 +19,13 @@ repost of the same joke but with the authorship information and a bit of (other 
 
 ## History
 
-**May 6th, 2007** &ndash; Original website _The Longest Joke in the World_ is created
+**May 6th, 2007** &ndash; Original website [_The Longest Joke in the World_](https://longestjokeintheworld.com) is
+created
 
-The original site you instantly find is simply named [The Longest Joke in the World](https://longestjokeintheworld.com).
-It's an old looking site with the entire story and an addendum claiming that "joke was also a personality profile test"
-which lists ways of reading the document and associated predictions about them. Below all of this there is one last
-section revealing that the joke is 42 meters from top to bottom.
+The original site you instantly find is simply named The Longest Joke in the World.com). It's an old looking site with
+the entire story and an addendum claiming that "joke was also a personality profile test" which lists ways of reading
+the document and associated predictions about them. Below all of this there is one last section revealing that the joke
+is 42 meters from top to bottom.
 
 While there is no given date of creation, a [Whois lookup](https://www.whois.com/whois/longestjokeintheworld.com) notes
 that the domain was registered on May 6th, 2007. There is also a seemingly broken note at the bottom listing "Visitors
@@ -42,7 +43,7 @@ spurred on the next development&mdash;someone re-hosting the site with better st
 
 ---
 
-**May 3rd, 2011** &ndash; Re-hosted website _Nate the Snake_ is created
+**May 3rd, 2011** &ndash; Re-hosted website [_Nate the Snake_](https://natethesnake.com) is created
 
 Four years after the original, we see the creation of a site just hosting the contents of the previous site in a much
 more readable format. It is essentially the same text with some grammatical fixes and a much wider box for the content.
@@ -63,7 +64,7 @@ file.
 
 ---
 
-**March 23rd, 2015** &ndash; Comment from _The Longest Joke in the World_'s creator
+**March 23rd, 2015** &ndash; Comment from [_The Longest Joke in the World_](https://longestjokeintheworld.com)'s creator
 
 Years after the original website was created, we get a
 [comment on a post](https://www.reddit.com/r/IsItBullshit/comments/2zhlsd/comment/cpobl2d/) in the r/IsItBullshit
@@ -78,7 +79,7 @@ For verification, the user says that they added the text "\[reddit verification\
 
 ---
 
-**October 30, 2020** &ndash; Post from _Nate the Snake_'s creator
+**October 30, 2020** &ndash; Post from [_Nate the Snake_](https://natethesnake.com)'s creator
 
 A few years later, the creator of the re-hosted website titled
 [I host natethesnake.com and would like to answer your questions.](https://www.reddit.com/jldbra/). The creator notes
@@ -86,11 +87,11 @@ that they did it after being annoyed by the formatting. They also said they coul
 
 ---
 
-**November 6th, 2021** &ndash; Analysis from a Reddit post
+**November 6th, 2021** &ndash; Analysis from a Reddit post "[Tracing Nate's History](https://www.reddit.com/qobeny/)"
 
-Next in history seems to be largest research I found into this comes from a Reddit post titled
-[Tracing Nate's History](https://www.reddit.com/qobeny/) written on November 6th, 2021. This post covers the history of
-the original text in a lot more depth and was what sent me down this rabbit hole.
+Next in history seems to be largest research I found into this comes from a Reddit post titled Tracing Nate's History
+written on November 6th, 2021. This post covers the history of the original text in a lot more depth and was what sent
+me down this rabbit hole.
 
 <blockquote>‘Longest Joke’ is mostly the same text as featured on <a
   href="https://natethesnake.com">natethesnake.com</a>, with a few exceptions. Firstly, the host of <a
@@ -102,8 +103,8 @@ the original text in a lot more depth and was what sent me down this rabbit hole
   </footer>
 </blockquote>
 
-I would recommend reading the [Reddit post](https://www.reddit.com/qobeny/) if you want further information about the
-original text. It is a lot more in depth than this post and has sources (wow!) that this lacks.
+I would recommend reading [the post](https://www.reddit.com/qobeny/) if you want further information about the original
+text. It is a lot more in depth than this post and has sources (wow!) that this lacks.
 
 ## The Joke
 
