@@ -58,12 +58,11 @@
     default: boolean;
   };
 
-  // prettier-ignore
   const modes: ConversionTypeChoice[] = [
-        { name: "URL String", value: ConversionType.UrlString, default: true },
-        { name: "Background image", value: ConversionType.BackgroundImage, default: false },
-        { name: "Boilerplate", value: ConversionType.Boilerplate, default: false },
-    ];
+    { name: "URL String", value: ConversionType.UrlString, default: true },
+    { name: "Background image", value: ConversionType.BackgroundImage, default: false },
+    { name: "Boilerplate", value: ConversionType.Boilerplate, default: false },
+  ];
 
   function handleModeChange(mode: ConversionType) {
     // Disable wrapping for multi-line output types
