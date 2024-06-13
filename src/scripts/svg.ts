@@ -6,7 +6,12 @@ export enum ConversionType {
 
 // Returns whether a string is valid svg (little janky)
 export function testValidSVG(text: string) {
-  return text.replaceAll(/\n/g, "").match(/^<svg.*<\/svg>$/) !== null;
+  return (
+    text
+      .replaceAll(/\n/g, "")
+      .replace(/^\s+/g, "")
+      .match(/^<svg.*<\/svg>$/) !== null
+  );
 }
 
 // Converts the input text to an SVG URL
@@ -20,6 +25,7 @@ export function convertToURL(text: string, type: ConversionType) {
 
   // Convert to a safe version
   const safeText = text
+    .replace(/^\s+/g, "") // Remove prefix space
     .replaceAll(/\#/g, "%23") // Change question marks for
     .replaceAll(/\?/g, "%3F") // Change question marks for
     .replaceAll(/\s\s+/g, " ") // Change spaces to singular versions
