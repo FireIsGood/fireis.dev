@@ -209,7 +209,7 @@
     max-height: var(--max-size);
     padding: 8px;
     margin-inline: auto;
-    border: 2px solid;
+    border: 2px solid var(--pico-form-element-border-color);
     overflow: auto;
   }
 
