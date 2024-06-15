@@ -109,7 +109,6 @@
 pre[data-language] > code {
   overflow-x: auto;
   color: var(--prism-text);
-  background-color: var(--prism-background);
 }
 
 pre[data-language] > code::selection,
