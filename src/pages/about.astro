@@ -22,7 +22,12 @@ import graphicDesign from "@/images/graphic-design.png";
           <strong>Pronouns:</strong>
           <a href="https://en.pronouns.page/@FireIsGood" target="_blank" class="contrast">She/Her</a>
         </li>
-        <li><strong>Favorite color:</strong> Yellow</li>
+        <li>
+          <strong>Favorite color:</strong>
+          <a href="https://www.colorhexa.com/fffacd" target="_blank" class="contrast"
+            >Yellow<span class="favorite-color"></span></a
+          >
+        </li>
         <li>
           <strong>Favorite link:</strong>
           <a href="https://fireisgood.github.io/secret-message/" target="_blank" class="contrast">This one</a>
@@ -85,6 +90,16 @@ import graphicDesign from "@/images/graphic-design.png";
     margin-block: calc(var(--pico-block-spacing-vertical) * 2);
     margin-inline: auto;
     gap: 2rem 0;
+  }
+
+  .favorite-color {
+    display: inline-block;
+    background-color: #fffacd;
+    vertical-align: baseline;
+    border: 1px solid var(--pico-secondary-border);
+    height: 10px;
+    width: 10px;
+    margin-left: 0.5ch;
   }
 
   .image-container {
