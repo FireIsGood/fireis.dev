@@ -17,8 +17,10 @@
 :root:root {
   --size-main: 960px;
   --size-wide: 1920px;
+  --hue: 92.4; // Yellow
+
   --pico-font-family: "STIXTwoText", sans-serif;
-  --pico-code-background-color: var(--pico-form-element-selected-background-color);
+  --pico-muted-border-color: #bcbec0;
 }
 
 /* Alternate shadow */
@@ -32,7 +34,15 @@
   --pico-box-shadow: var(--shadow-outset);
 }
 
+:root:root[data-theme="dark"] {
+  --pico-card-background-color: #1d232f;
+  --pico-code-background-color: var(--pico-form-element-selected-background-color);
+}
+
 :root:root[data-theme="light"] {
+  --pico-background-color: oklch(96.13% 0.018 var(--hue));
+  --pico-card-background-color: oklch(98.56% 0.009 var(--hue));
+  --pico-code-background-color: oklch(93.61% 0.024 var(--hue));
   --shadow-color: 0deg 0% 49%;
 }
 
