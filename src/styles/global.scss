@@ -23,6 +23,25 @@
   --pico-muted-border-color: #bcbec0;
 }
 
+:root.rgb {
+  animation: funny-hue 10s linear infinite;
+}
+
+@property --hue {
+  syntax: "<number>"; /* <- defined as type number for the transition to work */
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes funny-hue {
+  from {
+    --hue: 92.4;
+  }
+  to {
+    --hue: 360;
+  }
+}
+
 /* Alternate shadow */
 :root:root {
   /* https://www.joshwcomeau.com/shadow-palette/ */
