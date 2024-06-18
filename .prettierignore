@@ -1,3 +1,6 @@
 LICENSE
 tsconfig.json
 pnpm-lock.yaml
+
+# Minimized files
+*.min.css
