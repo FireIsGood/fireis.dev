@@ -53,9 +53,14 @@ const toc = buildToc(headings);
     & :global(ul) {
       padding-inline-start: 1rem;
       margin-bottom: 0;
+      counter-reset: index;
     }
     & :global(li) {
       list-style: none;
+    }
+    & :global(li::before) {
+      counter-increment: index;
+      content: counters(index, ".", decimal) ". ";
     }
 
     /* First gets 0 padding*/
