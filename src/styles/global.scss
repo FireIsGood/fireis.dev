@@ -176,6 +176,10 @@ ol {
   margin-bottom: 0;
 }
 
+summary {
+  font-style: italic;
+}
+
 /* Utility classes */
 .inset {
   box-shadow: var(--shadow-inset);
