@@ -40,6 +40,13 @@ const tools: Tool[] = [
     date: "2024 06 07",
     url: "/tools/svg-to-url",
   },
+  {
+    title: "Random Number Generator",
+    description: "Generates a very random number",
+    cover: prefix + "random-number-generator.png",
+    date: "2024 06 19",
+    url: "/tools/random-number-generator",
+  },
 ]
   .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
   .slice(0, toolCount);
