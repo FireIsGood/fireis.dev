@@ -84,7 +84,6 @@ const { title, description, image } = Astro.props;
   });
 
   let params = new URLSearchParams(document.location.search);
-  console.log(params.get("rgb"));
   if (params.get("rgb") !== null) {
     document.documentElement.classList.add("rgb");
   }
