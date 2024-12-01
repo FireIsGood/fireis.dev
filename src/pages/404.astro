@@ -7,8 +7,13 @@ import Layout from "@/layouts/Layout.astro";
     <h1>404</h1>
     <p class="error-description">Page not found</p>
     <p><em>How did you get here?</em></p>
+    <p>Return <a href="/">home</a> or <a href="" id="backlink">go back</a>.</p>
   </section>
 </Layout>
+
+<script>
+  document.getElementById("backlink")?.setAttribute("href", document.referrer);
+</script>
 
 <style>
   section {
@@ -22,8 +27,23 @@ import Layout from "@/layouts/Layout.astro";
     margin: 0;
     line-height: 0.9;
     font-size: 6.5rem;
+    letter-spacing: 4px;
+
+    animation: float 3s ease-in-out infinite;
   }
   .error-description {
     font-size: 2.5rem;
+  }
+
+  @keyframes float {
+    0% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -4px;
+    }
+    100% {
+      translate: 0 0;
+    }
   }
 </style>
