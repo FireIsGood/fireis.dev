@@ -5,14 +5,14 @@ echo '🔥 Testing your changes before committing 🔥'
 
 # Check astro building
 pnpm run check || (
-	echo '\n🚨🚨 Astro build failed! Fix that! 🚨🚨\n'
+	echo -e '\n🚨🚨 Astro build failed! Fix that! 🚨🚨\n'
 	false
 )
 
 # Check prettier linting
 pnpm run lint || (
-	echo "\n🚨🚨 Prettier check failed! Try using \`pnpm format\` and try again! 🚨🚨\n"
+	echo -e "\n🚨🚨 Prettier check failed! Try using \`pnpm format\` and try again! 🚨🚨\n"
 	false
 )
 
-echo '\n🔥 All seems well! 🔥\n'
+echo -e '\n🔥 All seems well! 🔥\n'
