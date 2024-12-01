@@ -172,6 +172,10 @@ ol {
   padding-inline-start: 1.6em;
 }
 
+:is(ul) :is(ul) {
+  margin-bottom: 0;
+}
+
 :where(article, blockquote) > *:last-child {
   margin-bottom: 0;
 }
