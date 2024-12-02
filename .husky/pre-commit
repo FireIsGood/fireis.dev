@@ -1,6 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+clear
+
 echo '🔥 Testing your changes before committing 🔥'
 
 # Check astro building
