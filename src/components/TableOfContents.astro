@@ -47,8 +47,13 @@ const toc = buildToc(headings);
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     background-color: var(--pico-code-background-color);
+    border: 1px solid;
+    border-color: var(--pico-code-border-color, var(--pico-form-element-border-color));
     border-radius: var(--pico-border-radius);
-    transition: background-color var(--pico-transition);
+    transition:
+      background-color var(--pico-transition),
+      border-color var(--pico-transition);
+    box-shadow: var(--shadow-outset);
 
     & :global(ul) {
       padding-inline-start: 1rem;

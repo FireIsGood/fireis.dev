@@ -7,6 +7,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import { h } from "hastscript";
 
+import expressiveCode from "astro-expressive-code";
+
 const headerLink = h(
   "svg",
   {
@@ -28,7 +30,28 @@ const headerLink = h(
 // https://astro.build/config
 export default defineConfig({
   site: "https://fireis.dev/",
-  integrations: [mdx(), sitemap(), svelte()],
+  integrations: [
+    expressiveCode({
+      // Customize themes to show dark in dark, light in light
+      themes: ["one-light", "catppuccin-frappe"],
+      customizeTheme: (theme) => {
+        if (theme.name === "one-light") theme.name = "light";
+        if (theme.name === "catppuccin-frappe") theme.name = "dark";
+        return theme;
+      },
+      styleOverrides: {
+        frames: {
+          frameBoxShadowCssValue: ({ resolveSetting }) => `0 0.1rem 0.2rem ${resolveSetting("frames.shadowColor")}`,
+        },
+        borderRadius: "0",
+        codePaddingBlock: "0.75rem",
+        codePaddingInline: "0.8rem",
+      },
+    }),
+    mdx(),
+    sitemap(),
+    svelte(),
+  ],
   server: {
     port: 1625,
   },

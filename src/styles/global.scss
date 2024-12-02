@@ -60,9 +60,9 @@
 
 :root:root[data-theme="light"] {
   --pico-background-color: oklch(96.13% 0.018 var(--hue));
-  --pico-card-background-color: oklch(98.56% 0.009 var(--hue));
-  --pico-code-background-color: oklch(93.61% 0.024 var(--hue));
-  --pico-code-border-color: oklch(88.61% 0.024 var(--hue));
+  --pico-card-background-color: oklch(96.99% 0.0113 var(--hue));
+  --pico-code-background-color: oklch(98.51% 0.0076 var(--hue));
+  --pico-code-border-color: oklch(88.61% 0.0478 var(--hue));
   --shadow-color: 0deg 0% 49%;
 }
 
@@ -203,4 +203,9 @@ a:has(.header-permalink) {
   &:hover {
     opacity: 1;
   }
+}
+
+/* Expressive Code blocks */
+.expressive-code {
+  margin-bottom: var(--pico-typography-spacing-vertical);
 }
