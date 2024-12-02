@@ -13,7 +13,8 @@
   "repository": "github:fireisgood/fireis.dev",
   "scripts": {
     "start": "astro dev",
-    "dev": "astro dev --open",
+    "dev": "astro dev",
+    "devo": "astro dev --open",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
