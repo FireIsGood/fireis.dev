@@ -47,16 +47,15 @@ const tools: Tool[] = [
     date: "2024 06 19",
     url: "/tools/random-number-generator",
   },
-]
-  .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
-  .slice(0, toolCount);
+].sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+const toolsLimited: Tool[] = tools.slice(0, toolCount);
 
 const images = import.meta.glob("@/images/*");
 ---
 
 <ul>
   {
-    tools.map((tool) => (
+    toolsLimited.map((tool) => (
       <li class="tool">
         <a href={tool.url} class="contrast">
           <div class="hero-image">
