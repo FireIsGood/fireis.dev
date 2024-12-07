@@ -45,7 +45,6 @@ export default defineConfig({
         },
         borderRadius: "0",
         codePaddingBlock: "0.75rem",
-        codePaddingInline: "0.8rem",
       },
     }),
     mdx(),
