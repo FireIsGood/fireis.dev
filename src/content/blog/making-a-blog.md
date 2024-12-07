@@ -45,7 +45,7 @@ using `minmax()` to tell it that it can go down to 0 pixels wide if it needs to.
 
 CSS never fails to get you...
 
-```css
+```css {4}
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
