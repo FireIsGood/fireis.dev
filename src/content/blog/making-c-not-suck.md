@@ -210,11 +210,6 @@ for hiding a "make it work better" option when they provide the extension pack a
 
 ## Conclusion
 
-Programming can be hard, but your editor shouldn't hold you back. If you've followed the steps, now you should have a
-really nice C editing experience with faster LSP highlighting, snippets, and easy formatting to your liking.
-
-or
-
 To be honest, I don't like C. If you have the chance, program in anything else; Rust, Zig, JavaScript(??), anything but
 the horrors of C. If you must, I give you my greatest condolences and I hope prior advice can ease your pains if only by
 a little.
