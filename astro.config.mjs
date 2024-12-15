@@ -58,11 +58,6 @@ export default defineConfig({
     enabled: false,
   },
   markdown: {
-    shikiConfig: {
-      // https://shiki.style/themes
-      theme: "catppuccin-macchiato",
-    },
-    syntaxHighlight: "prism",
     rehypePlugins: [
       rehypeAccessibleEmojis,
       rehypeSlug,
