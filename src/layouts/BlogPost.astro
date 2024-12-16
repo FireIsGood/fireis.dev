@@ -18,9 +18,10 @@ type Props = {
 
 const props = Astro.props;
 const { title, description, pubDate, updatedDate, cover } = props.data;
+const titlePrefixed = `FireIsBlog - ${title}`;
 ---
 
-<Layout suffix="Blog" {title} {description} image={cover?.src ?? SITE_EMBED_IMAGE}>
+<Layout suffix="Blog" title={titlePrefixed} {description} image={cover?.src ?? SITE_EMBED_IMAGE}>
   <ArticleStructuredData slot="structured-data" {...props.data} />
   <Breadcrumb />
   <article>
