@@ -155,18 +155,31 @@ Changes**, rename the commit if you want, and click **Confirm**.
 
 ![Setting up the GitHub Pages workflow](../../images/gh-pages-actions.png)
 
-Your site should now be up within a few seconds. You can set its link to be easily seen by going to the top right gear
-icon and then checking the **Use your GitHub Pages website** option. While you're there, you can also uncheck the
-**Releases** and **Packages** options to clean up the side bar. Save your changes and your link should be shown under
-the **About** header.
+This adds a file at `.github/workflows/static.yml` which will redeploy your site whenever changes are pushed to main. If
+you ever need to change anything about this, you can find it in that file. Your site should now be up within a few
+seconds!
+
+#### Final Touches
+
+For some final touches, you can make the GitHub page link directly to your new site instead of having users find it
+under Deployments. To do this, navigate to the top right gear icon to open the settings.
+
+![Opening repository settings](../../images/gh-pages-menu-cog.png)
+
+Then, check the **Use your GitHub Pages website**. While you're there, you can also uncheck the **Releases** and
+**Packages** options to clean up the side bar.
 
 ![Changing repository settings](../../images/gh-pages-repo-settings.png)
 
-Whenever you want to update your website, just push local Git changes to your main branch.
+After you save your changes, the link to your site should appear under the About header.
 
-You can see my example at
-[fireisgood.github.io/surge-static-article](https://fireisgood.github.io/surge-static-article/) and its moderately
-minimal code at my [GitHub repository](https://github.com/FireIsGood/surge-static-article).
+![Fixed About section](../../images/gh-pages-about-after.png)
+
+Whenever you want to update your website, just push local Git changes to your main branch. As with the initial
+deployment, changes should appear live on the site within seconds!
+
+You can see my example at [fireisgood.github.io/surge-static-article](https://fireisgood.github.io/static-site-example/)
+and its moderately minimal code at my [GitHub repository](https://github.com/FireIsGood/static-site-example).
 
 For a more detailed guide, you can check out the [GitHub Pages Docs](https://docs.github.com/en/pages/quickstart) on
 this topic.
