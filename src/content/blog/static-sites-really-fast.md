@@ -94,6 +94,8 @@ Pages. They both have a few trade-offs as listed here for brevity:
   - Additional step to configure the repository on GitHub
   - Automatically republishes on Git push
   - Default URL is `[your-github-username].github.io`; the base domain or a subdomain of it.
+    - The repository `test/cool-website` will be hosted at `test.github.io/cool-website`
+    - The repository `test/test.github.io` will be hosted at `test.github.io`
 
 For the main section of this guide, we will use Surge to just get the site up fast. Afterwards, we will go back and host
 over GitHub Pages for open source sites you want to redeploy as you commit updates.
