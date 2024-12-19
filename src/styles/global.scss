@@ -209,3 +209,8 @@ a:has(.header-permalink) {
 .expressive-code {
   margin-bottom: var(--pico-typography-spacing-vertical);
 }
+
+/* Giscus */
+.giscus {
+  padding-inline: 1rem;
+}

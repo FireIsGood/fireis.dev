@@ -1,0 +1,54 @@
+---
+
+---
+
+<script
+  is:inline
+  src="https://giscus.app/client.js"
+  data-repo="FireIsGood/fireis.dev"
+  data-repo-id="R_kgDOLy6p6g"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOLy6p6s4ClW6P"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async></script>
+
+<script is:inline>
+  function updateGiscusTheme() {
+    const themeMapping = {
+      light: "light",
+      dark: "dark_dimmed",
+    };
+    const theme = themeMapping[document.documentElement.getAttribute("data-theme")];
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, "https://giscus.app");
+  }
+
+  // Update if the theme changes
+  const observer = new MutationObserver(updateGiscusTheme);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  // Abuse the message passing system to force the theme to match at all times
+  function handleMessage(event) {
+    if (event.origin !== "https://giscus.app") return;
+    if (!(typeof event.data === "object" && event.data.giscus)) return;
+
+    const giscusData = event.data.giscus;
+
+    // Ignore message and use this to force the theme to work for the first message
+    updateGiscusTheme();
+  }
+
+  // Attach listeners
+  document.addEventListener("DOMContentLoaded", updateGiscusTheme);
+
+  window.addEventListener("message", handleMessage);
+</script>

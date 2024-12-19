@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
+import Comments from "@/components/Comments.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import TableOfContents from "@/components/TableOfContents.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
@@ -54,6 +55,7 @@ const titlePrefixed = `FireIsBlog - ${title}`;
     <TableOfContents headings={props.headings} />
     <slot />
   </article>
+  <Comments />
   <Ending />
 </Layout>
 
