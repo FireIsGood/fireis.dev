@@ -7,8 +7,8 @@ cover: "@/images/static-sites.png"
 
 A static website is a website whose contents are basic HTML, CSS, and JS&mdash;hand-written or generated from more code.
 These files can then be served over many services directly without having to run a special type of server&mdash;they
-just need to be able to serve files. This makes them the easiest way to host websites as long as they the content on the
-site doesn't change constantly.
+just need to be able to serve files. This makes them the easiest way to host websites as long as the content on the site
+doesn't change constantly.
 
 For learning web development, I believe making a site in this way is one of the fastest ways to get something you've
 made out there.
