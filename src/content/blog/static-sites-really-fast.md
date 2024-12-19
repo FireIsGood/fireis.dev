@@ -92,7 +92,6 @@ Pages. They both have a few trade-offs as listed here for brevity:
 - [GitHub Pages](https://pages.github.com)
   - Requires a GitHub account (you probably have one)
   - Additional step to configure the repository on GitHub
-  - Additional step to deal with Jekyll
   - Automatically republishes on Git push
   - Default URL is `[your-github-username].github.io`; the base domain or a subdomain of it.
 
