@@ -178,7 +178,7 @@ After you save your changes, the link to your site should appear under the About
 Whenever you want to update your website, just push local Git changes to your main branch. As with the initial
 deployment, changes should appear live on the site within seconds!
 
-You can see my example at [fireisgood.github.io/surge-static-article](https://fireisgood.github.io/static-site-example/)
+You can see my example at [fireisgood.github.io/static-site-example](https://fireisgood.github.io/static-site-example/)
 and its moderately minimal code at my [GitHub repository](https://github.com/FireIsGood/static-site-example).
 
 For a more detailed guide, you can check out the [GitHub Pages Docs](https://docs.github.com/en/pages/quickstart) on
