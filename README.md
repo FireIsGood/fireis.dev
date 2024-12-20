@@ -1,10 +1,13 @@
-# FireIsWebsite
+# FireIsREADME
 
 ![GitHub License](https://img.shields.io/github/license/fireisgood/fireis.dev?style=flat-square&color=a31f34)
 ![GitHub last commit](https://img.shields.io/github/last-commit/fireisgood/fireis.dev?style=flat-square)
 ![Website](https://img.shields.io/website?url=http%3A%2F%2Ffireis.dev&style=flat-square)
 
-My website! Currently hosted through GitHub Pages via an Action.
+My website!
+
+This is just the code behind it. You can check it out at [fireis.dev](https://fireis.dev/) to see what this actually is.
+I'm not sure why you would want to look here, but I hope you find what you seek!
 
 Project structure:
 
@@ -19,14 +22,18 @@ src/
 ├── images/
 ├── layouts/
 ├── pages/
-│   └── blog/
+│   ├── blog/
+│   └── tools/
 └── styles/
 ```
+
+This site is created with [Astro](https://astro.build/) with many styles from [Pico CSS](https://picocss.com/). I am
+currently hosting it through GitHub Pages via an [Action](.github/workflows/deploy.yml).
 
 ## Installation
 
 <details>
-<summary>...</summary>
+<summary>I mean like, if you really want to...</summary>
 
 ### Prerequisites
 
