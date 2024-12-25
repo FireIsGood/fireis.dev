@@ -69,6 +69,8 @@
 /* General layout stuff */
 html {
   height: 100%;
+  scrollbar-color: rgb(from var(--pico-color) r g b / 20%) transparent;
+  scrollbar-width: thin;
 }
 body {
   min-height: 100%;
