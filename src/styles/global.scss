@@ -71,6 +71,7 @@ html {
   height: 100%;
   scrollbar-color: rgb(from var(--pico-color) r g b / 20%) transparent;
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 body {
   min-height: 100%;
@@ -143,6 +144,11 @@ img {
   max-height: 100%;
   object-fit: cover;
   border-radius: var(--pico-border-radius);
+}
+
+/* In case you actually need it to be inline */
+img.inline {
+  display: inline-block;
 }
 
 a[href^="#"] {

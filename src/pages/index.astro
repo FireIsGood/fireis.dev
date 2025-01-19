@@ -4,29 +4,36 @@ import PostList from "@/components/PostList.astro";
 import ToolList from "@/components/ToolList.astro";
 import Ending from "@/components/Ending.astro";
 import WebsiteStructuredData from "@/components/WebsiteStructuredData.astro";
+import { Image } from "astro:assets";
+
+import heroImage from "@/images/fireimage.gif";
 ---
 
 <Layout title="FireIsWebsite">
   <WebsiteStructuredData slot="structured-data" />
   <section class="hero">
-    <h1>Hey, you!</h1>
-    <p>Welcome to my personal hell website</p>
+    <div class="hero-content">
+      <Image src={heroImage} width={400} alt="" loading="eager" class="hero-image" />
+      <div class="hero-text">
+        <h1>FireIsGood</h1>
+        <p>How did you get here?</p>
+        <div class="buttons">
+          <a role="button" class="secondary" href="#works">My Works &darr;</a>
+          <a role="button" class="secondary outline" href="/about">About &rarr;</a>
+        </div>
+      </div>
+    </div>
   </section>
   <section>
-    <article class="inset">
-      <h2>What is this?</h2>
-      <p>
-        The start of my website. I've made this to be a sort of headquarters for my web dev stuff. I'm a CSS enjoyer, so
-        I hope this can host some fun stuff over time.
-      </p>
-      <p>
-        This was created with <a href="https://astro.build/" target="_blank">Astro</a> and <a
-          href="https://picocss.com/"
-          target="_blank">Pico CSS</a
-        >.
-      </p>
-    </article>
+    <h2 id="works">Works</h2>
+    <p>
+      When I have the time, I like to write articles and silly tools. When I have even more time, I like to contribute
+      to Open Source software. I enjoy doing origami and pondering arguably deranged topics as an aside. No matter how
+      you got here, I hope you enjoy what you find.
+    </p>
+    <p>You can find all the things I do on my <a href="https://github.com/FireIsGood" target="_blank">GitHub</a></p>
   </section>
+  <hr />
   <section>
     <h2>Recent blog posts</h2>
     <PostList postCount={3} />
@@ -41,25 +48,90 @@ import WebsiteStructuredData from "@/components/WebsiteStructuredData.astro";
 </Layout>
 
 <style>
-  section:not(.hero) + section {
-    margin-top: 4rem;
+  section + section {
+    margin-top: 2rem;
   }
 
   .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-height: 60vh;
+    min-height: calc(100vh - 4.5rem);
+    max-width: 720px;
+    margin-inline: auto;
   }
 
-  h1 {
-    font-size: 2.5rem;
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    h1 {
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    p {
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-image {
+    order: 1;
+    margin: 0;
+    max-width: 35%;
+    animation: float 4s infinite;
+    box-shadow: var(--shadow-outset);
+  }
+
+  .buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  a[role="button"] {
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
+    border-radius: 2rem;
+  }
+
+  hr {
+    margin-block: 2.5rem;
+  }
+
+  #works {
+    scroll-margin-top: 4rem;
   }
 
   @media (max-width: 450px) {
     .hero {
-      min-height: calc(60vh - 6rem);
+      min-height: calc(100vh - 12rem);
+      padding-bottom: 4rem;
+    }
+    .hero-content {
+      flex-direction: column;
+    }
+    .hero-image {
+      order: unset;
+      margin-inline: auto;
+      max-width: 60%;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -8px;
     }
   }
 </style>
