@@ -24,19 +24,19 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/mdx": "^2.3.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.4",
-    "@astrojs/svelte": "^5.4.0",
-    "astro": "^4.8.2",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.0.6",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/svelte": "^7.0.3",
+    "astro": "^5.1.7",
     "astro-breadcrumbs": "^2.3.0",
     "astro-expressive-code": "^0.38.3",
     "markdown-it": "^14.1.0",
     "sanitize-html": "^2.13.0",
     "sharp": "^0.33.3",
-    "svelte": "^4.2.16",
-    "typescript": "^5.4.5"
+    "svelte": "^5.19.0",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "hast-util-to-string": "^3.0.0",
