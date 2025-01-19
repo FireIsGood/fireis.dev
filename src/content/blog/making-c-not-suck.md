@@ -165,7 +165,7 @@ default for Google is `'Attach'`, but if you wish to use another style it is imp
 
 Here is what they look like:
 
-```c
+```c title="test.c"
 // K&R ('Attach')
 while (x == y) {
     foo();

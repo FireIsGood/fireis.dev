@@ -1,0 +1,47 @@
+<div class="outer">
+  <div class="inner">📀</div>
+</div>
+
+<style>
+  :root {
+    /* Your values here */
+    --width: 9.2rem;
+    --height: 8rem;
+    --aspect-ratio: 9.2 / 8;
+    --speed: 3.35s;
+  }
+  .outer {
+    position: relative;
+    display: block;
+    width: var(--width);
+    height: var(--height);
+    border: 0.0625rem solid #bcbec0;
+  }
+  .inner {
+    position: absolute;
+    display: block;
+    animation:
+      bounce-up var(--speed) linear infinite,
+      bounce-right calc(var(--speed) * 9.2 / 8) linear infinite;
+  }
+
+  @keyframes bounce-right {
+    0%,
+    100% {
+      left: 0;
+    }
+    50% {
+      left: calc(100% - 1rem);
+    }
+  }
+
+  @keyframes bounce-up {
+    0%,
+    100% {
+      bottom: 0;
+    }
+    50% {
+      bottom: calc(100% - 1rem);
+    }
+  }
+</style>

@@ -47,6 +47,13 @@ const tools: Tool[] = [
     date: "2024 06 19",
     url: "/tools/random-number-generator",
   },
+  {
+    title: "DVD Bouncer Tool",
+    description: "Generate DVD bouncers",
+    cover: prefix + "dvdbouncer.png",
+    date: "2025 01 18",
+    url: "/tools/dvd-bounce-tool",
+  },
 ].sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
 const toolsLimited: Tool[] = tools.slice(0, toolCount);
 

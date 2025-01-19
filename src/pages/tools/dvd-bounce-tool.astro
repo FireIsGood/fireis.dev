@@ -1,0 +1,74 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Ending from "@/components/Ending.astro";
+
+import DvdBouncer from "@/components/DvdBouncer.svelte";
+import dvdBouncerImage from "@/images/dvdbouncer.png";
+
+import { Code } from "astro-expressive-code/components";
+import bouncerMarquee from "@/misc/dvdbouncer-marquee.html?raw";
+import bouncerAnimation from "@/misc/dvdbouncer-animation.html?raw";
+---
+
+<Layout
+  suffix="Tools"
+  title="FireIsTools - DVD Bouncer Tool"
+  description="Generate DVD bouncers"
+  image={dvdBouncerImage.src}
+>
+  <Breadcrumb />
+  <article>
+    <header>
+      <h1>DVD Bounce Thing</h1>
+      <p><em>A DVD <abbr title="this is not a real word">Bouncer</abbr> thing. Because funny.</em></p>
+    </header>
+    <DvdBouncer client:load />
+    <hr />
+    <p>DVD bouncers are very important to society. Here's a tool to make them.</p>
+    <h2>Marquee Hack</h2>
+    <p>You can actually just do a marquee and cheat a little with some styles.</p>
+    <Code title="index.html" lang="html" code={bouncerMarquee} />
+    <h2>CSS Animations</h2>
+    <p>Or you can do it with animations, though you'll have to have more style boilerplate</p>
+    <Code title="index.html" lang="html" code={bouncerAnimation} />
+    <h2>Potential Issues</h2>
+    <ul>
+      <li>
+        The <code>&lt;marquee&gt;</code> element isn't supported on Safari. If you wanted those users to see it, you will
+        have to use the CSS solution.
+      </li>
+      <li>
+        The CSS animations uses a <code>calc</code> function that assumes a width of 1rem. This doesn't work if your styles
+        are otherwise.
+      </li>
+    </ul>
+    <h2>Additional Resources</h2>
+    <ul>
+      <li><a href="https://devdocs.io/html/element/marquee" target="_blank">DevDocs &ndash; Marquee element</a></li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=5mGuCdlCcNM" target="_blank" referrerpolicy="no-referrer"
+          >YouTube &ndash; Bouncing DVD Logo 10 hours</a
+        > If you wanted a video to put on in the background
+      </li>
+    </ul>
+  </article>
+  <section>
+    <Ending />
+  </section>
+</Layout>
+
+<style>
+  header {
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+  }
+</style>
