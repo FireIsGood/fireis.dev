@@ -2,9 +2,10 @@
 import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
+import { Image } from "astro:assets";
 
 import DvdBouncer from "@/components/DvdBouncer.svelte";
-import dvdBouncerImage from "@/images/dvdbouncer.png";
+import thumbImage from "@/images/dvdbouncer.png";
 
 import { Code } from "astro-expressive-code/components";
 import bouncerMarquee from "@/misc/dvdbouncer-marquee.html?raw";
@@ -15,10 +16,13 @@ import bouncerAnimation from "@/misc/dvdbouncer-animation.html?raw";
   suffix="Tools"
   title="FireIsTools - DVD Bouncer Tool"
   description="Generate DVD bouncers"
-  image={dvdBouncerImage.src}
+  image={thumbImage.src}
 >
   <Breadcrumb />
   <article>
+    <div class="cover">
+      <Image width={1920} height={960} src={thumbImage} alt="" loading="eager" />
+    </div>
     <header>
       <h1>DVD Bounce Thing</h1>
       <p><em>A DVD <abbr title="this is not a real word">Bouncer</abbr> thing. Because funny.</em></p>
@@ -59,6 +63,13 @@ import bouncerAnimation from "@/misc/dvdbouncer-animation.html?raw";
 </Layout>
 
 <style>
+  .cover {
+    margin-bottom: var(--pico-spacing);
+  }
+  .cover img {
+    max-height: 80vh;
+  }
+
   header {
     margin: 0;
     padding: 0;

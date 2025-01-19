@@ -3,19 +3,23 @@ import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
 import Terminal from "@/components/JavascriptTerminal.svelte";
+import { Image } from "astro:assets";
 
-import jsImage from "@/images/js-terminal.png";
+import thumbImage from "@/images/js-terminal.png";
 ---
 
 <Layout
   suffix="Tools"
   title="FireIsTools - JavaScript Terminal"
   description="A JavaScript terminal"
-  image={jsImage.src}
+  image={thumbImage.src}
 >
   <Breadcrumb />
   <article>
     <header>
+      <div class="cover">
+        <Image width={1920} height={960} src={thumbImage} alt="" loading="eager" />
+      </div>
       <h1>JavaScript Terminal</h1>
       <p><em>A basic JavaScript REPL</em></p>
     </header>
@@ -49,6 +53,13 @@ import jsImage from "@/images/js-terminal.png";
 </Layout>
 
 <style>
+  .cover {
+    margin-bottom: var(--pico-spacing);
+  }
+  .cover img {
+    max-height: 80vh;
+  }
+
   header {
     margin: 0;
     padding: 0;

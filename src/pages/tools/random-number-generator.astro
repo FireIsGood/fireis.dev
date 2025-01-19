@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
+import { Image } from "astro:assets";
 
 import thumbImage from "@/images/random-number-generator.png";
 ---
@@ -15,6 +16,9 @@ import thumbImage from "@/images/random-number-generator.png";
   <Breadcrumb />
   <article>
     <header>
+      <div class="cover">
+        <Image width={1920} height={960} src={thumbImage} alt="" loading="eager" />
+      </div>
       <h1>Random Number Generator</h1>
       <p><em>Random number generator</em></p>
     </header>
@@ -62,6 +66,13 @@ import thumbImage from "@/images/random-number-generator.png";
 </Layout>
 
 <style>
+  .cover {
+    margin-bottom: var(--pico-spacing);
+  }
+  .cover img {
+    max-height: 80vh;
+  }
+
   header {
     margin: 0;
     padding: 0;

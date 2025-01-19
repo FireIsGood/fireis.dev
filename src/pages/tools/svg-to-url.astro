@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Ending from "@/components/Ending.astro";
 import SvgConverter from "@/components/SvgConverter.svelte";
+import { Image } from "astro:assets";
 
 import thumbImage from "@/images/svg-to-url.png";
 ---
@@ -11,6 +12,9 @@ import thumbImage from "@/images/svg-to-url.png";
   <Breadcrumb />
   <article>
     <header>
+      <div class="cover">
+        <Image width={1920} height={960} src={thumbImage} alt="" loading="eager" />
+      </div>
       <h1>SVG to URL</h1>
       <p><em>Converts SVGs to Data URLs</em></p>
     </header>
@@ -37,6 +41,13 @@ import thumbImage from "@/images/svg-to-url.png";
 </Layout>
 
 <style>
+  .cover {
+    margin-bottom: var(--pico-spacing);
+  }
+  .cover img {
+    max-height: 80vh;
+  }
+
   header {
     margin: 0;
     padding: 0;
