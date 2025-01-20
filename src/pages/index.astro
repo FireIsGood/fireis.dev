@@ -24,24 +24,26 @@ import heroImage from "@/images/fireimage.gif";
       </div>
     </div>
   </section>
-  <section>
-    <h2 id="works">Works</h2>
-    <p>
-      When I have the time, I like to write articles and silly tools. When I have even more time, I like to contribute
-      to Open Source software. I enjoy doing origami and pondering arguably deranged topics as an aside. No matter how
-      you got here, I hope you enjoy what you find.
-    </p>
-    <p>You can find all the things I do on my <a href="https://github.com/FireIsGood" target="_blank">GitHub</a></p>
-  </section>
-  <hr />
-  <section>
-    <h2>Recent blog posts</h2>
-    <PostList postCount={3} />
-  </section>
-  <section>
-    <h2>Recent tools</h2>
-    <ToolList toolCount={3} />
-  </section>
+  <article>
+    <section>
+      <h2 id="works">Works</h2>
+      <p>
+        When I have the time, I like to write articles and silly tools. When I have even more time, I like to contribute
+        to Open Source software. I enjoy doing origami and pondering arguably deranged topics as an aside. No matter how
+        you got here, I hope you enjoy what you find.
+      </p>
+      <p>You can find all the things I do on my <a href="https://github.com/FireIsGood" target="_blank">GitHub</a></p>
+    </section>
+    <hr />
+    <section>
+      <h2>Recent blog posts</h2>
+      <PostList postCount={3} />
+    </section>
+    <section>
+      <h2>Recent tools</h2>
+      <ToolList toolCount={3} />
+    </section>
+  </article>
   <section>
     <Ending />
   </section>
@@ -50,6 +52,10 @@ import heroImage from "@/images/fireimage.gif";
 <style>
   section + section {
     margin-top: 2rem;
+  }
+
+  section > :global(:last-child) {
+    margin-bottom: 0;
   }
 
   .hero {
@@ -64,8 +70,9 @@ import heroImage from "@/images/fireimage.gif";
 
   .hero-content {
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 1rem 0.5rem;
 
     h1 {
       font-size: 4rem;
