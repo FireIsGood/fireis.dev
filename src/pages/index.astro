@@ -132,19 +132,23 @@ import heroImage from "@/images/profile-bg-med.png";
     scroll-margin-top: 4rem;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 550px) {
     .hero {
       min-height: calc(100vh - 8.5rem);
       padding-bottom: 8.6rem;
     }
     .hero-content {
       flex-direction: column;
+      text-align: center;
     }
-    .hero-image {
+    .hero-image-stack {
       order: unset;
       margin-inline: auto;
-      max-width: 60%;
-      margin-bottom: 1.5rem;
+      max-width: 50%;
+      margin-bottom: 2.5rem;
+    }
+    .buttons {
+      justify-content: center;
     }
   }
 
