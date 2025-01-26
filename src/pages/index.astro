@@ -6,14 +6,17 @@ import Ending from "@/components/Ending.astro";
 import WebsiteStructuredData from "@/components/WebsiteStructuredData.astro";
 import { Image } from "astro:assets";
 
-import heroImage from "@/images/fireimage.gif";
+import heroImage from "@/images/profile-bg-med.png";
 ---
 
 <Layout title="FireIsWebsite">
   <WebsiteStructuredData slot="structured-data" />
   <section class="hero">
     <div class="hero-content">
-      <Image src={heroImage} width={400} alt="" loading="eager" class="hero-image" />
+      <div class="hero-image-stack">
+        <Image src={heroImage} width={400} alt="" loading="eager" class="hero-image" transition:name="profile-image" />
+        <div class="hero-image-backer"></div>
+      </div>
       <div class="hero-text">
         <h1>FireIsGood</h1>
         <p>How did you get here?</p>
@@ -90,11 +93,24 @@ import heroImage from "@/images/fireimage.gif";
     justify-content: center;
   }
 
-  .hero-image {
+  .hero-image-stack {
     order: 1;
-    margin: 0;
     max-width: 35%;
+    display: grid;
+  }
+
+  .hero-image {
     box-shadow: var(--shadow-outset);
+    grid-area: 1/2;
+  }
+  .hero-image-backer {
+    background: var(--pico-secondary);
+    border-radius: var(--pico-border-radius);
+    grid-area: 1/2;
+    position: relative;
+    z-index: -1;
+    box-shadow: var(--shadow-outset);
+    animation: hero 60s linear infinite;
   }
 
   .buttons {
@@ -129,6 +145,15 @@ import heroImage from "@/images/fireimage.gif";
       margin-inline: auto;
       max-width: 60%;
       margin-bottom: 1.5rem;
+    }
+  }
+
+  @keyframes hero {
+    0% {
+      rotate: 0.025turn;
+    }
+    100% {
+      rotate: 1.025turn;
     }
   }
 </style>

@@ -14,7 +14,7 @@ import graphicDesign from "@/images/graphic-design.png";
     <h1>About</h1>
     <section class="self-intro grid">
       <div class="image-container">
-        <Image src={profileImage} width={160} alt="" loading="lazy" />
+        <Image src={profileImage} width={160} alt="" loading="lazy" transition:name="profile-image" />
       </div>
       <ul>
         <li><strong>Name:</strong> Fire (is good)</li>
@@ -118,12 +118,11 @@ import graphicDesign from "@/images/graphic-design.png";
   }
 
   .image-container {
-    border-radius: var(--pico-border-radius);
-    box-shadow: var(--shadow-outset);
     width: fit-content;
     justify-self: center;
 
     & > img {
+      box-shadow: var(--shadow-outset);
       height: 100%;
     }
   }
