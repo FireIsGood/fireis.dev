@@ -177,6 +177,7 @@ hr {
 
 article > header {
   transition: border-bottom-color var(--pico-transition);
+  border-color: var(--pico-muted-border-color);
 }
 
 ul,
