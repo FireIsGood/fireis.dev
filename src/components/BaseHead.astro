@@ -60,6 +60,9 @@ const { title, description, image } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Placeholder preloading -->
+<link rel="preload" href="/previewplaceholder.webp" as="image" />
+
 <!-- Fix theme FOUC -->
 <script is:inline>
   // This must be inline to stop FOUC

@@ -35,6 +35,9 @@ const post = Astro.props;
     aspect-ratio: 2 / 1;
     border-radius: var(--pico-border-radius);
     box-shadow: 0 0 4px rgb(from var(--pico-muted-color) r g b / 40%);
+    background-image: url("/previewplaceholder.webp");
+    background-size: cover;
+    background-position: center;
   }
   .hero-image:not(:has(img)) {
     display: grid;
