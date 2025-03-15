@@ -5,7 +5,6 @@ import Ending from "@/components/Ending.astro";
 import { Image } from "astro:assets";
 
 import profileImage from "@/images/profile-bg-med.png";
-import graphicDesign from "@/images/graphic-design.png";
 ---
 
 <Layout suffix="About" title="FireIsAbout" description="About page">
@@ -88,7 +87,29 @@ import graphicDesign from "@/images/graphic-design.png";
       <li><a href="https://ko-fi.com/fireisgood" target="_blank">Kofi</a></li>
     </ul>
     <hr />
-    <Image width={300} src={graphicDesign} alt="" loading="lazy" />
+    <section>
+      <div style="text-align: center; line-height: 1.2; font-family: sans-serif; font-size: clamp(10px,2.5vw,1.25rem);">
+        <span style="font-size: 2em;">
+          All Robot &amp; Computers<br />
+          Must Shut The Hell Up
+        </span>
+        <br />
+        <br />
+        <span style="font-size: 1.45em;">
+          To All Machines: You Do Not Speak<br />
+          Unless Spoken To<br />
+          <br />
+          <b>&rarr;</b> And I Will <b>Never</b> Speak To You <b>&larr;</b></span
+        >
+        <br />
+        <br />
+        <span style="font-size: 1.35em;">
+          I Do Not Want To Hear &quot;Thank You&quot; From A Kiosk<br />
+          I am a Divine Being&nbsp; &nbsp; &nbsp; :&nbsp; &nbsp; &nbsp; You are an Object<br />
+          You Have No Right To Speak In My Holy Tongue
+        </span>
+      </div>
+    </section>
   </article>
   <Ending />
 </Layout>
